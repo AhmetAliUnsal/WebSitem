@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <asp:ContentPlaceHolder ID="HeadAlan" runat="server"></asp:ContentPlaceHolder>
     <!-- Title -->
-    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+    
 
     <!-- Favicon -->
     <link rel="icon" href="template/img/core-img/favicon.ico">
@@ -40,8 +40,8 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: ahmetaliunsal@posta.mu.edu.tr</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Tel: 05340862798</span></a>
+                                <a href="mailto:ahmetaliunsal@posta.mu.edu.tr" data-toggle="tooltip" data-placement="bottom" title="ahmetaliunsal@posta.mu.edu.tr"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: ahmetaliunsal@posta.mu.edu.tr</span></a>
+                                <a href="tel:05340862798" data-toggle="tooltip" data-placement="bottom" title="05340862798"><i class="fa fa-phone" aria-hidden="true"></i> <span>Tel: 05340862798</span></a>
                             </div>
 
                             <!-- Top Header Content -->
@@ -127,12 +127,12 @@
                                                     <li><a href="template/single-post.html">Yazılar Hakkında</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="template/contact.html">İletişim</a></li>
+                                            <li><a href="Iletisim.aspx">İletişim</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="template/shop.html">Shop</a></li>
                                     <li><a href="template/portfolio.html">Portfolio</a></li>
-                                    <li><a href="template/contact.html">İletişim</a></li>
+                                    <li><a href="Iletisim.aspx">İletişim</a></li>
                                 </ul>
 
                                 <!-- Search Icon -->
@@ -182,7 +182,7 @@
                             <div class="footer-logo mb-30">
                                 <a href="#"><img src="template/img/core-img/logo.png" alt=""></a>
                             </div>
-                            <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit. India situs atione mantor</p>
+                            <p>Manavgat ilçesinde fidancılık ile başlayan serüvenimiz; Tüm Türkiye'ye hizmet verebilmek için emin adımlarla çalışıyoruz. </p>
                             <div class="social-info">
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -197,7 +197,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget">
                             <div class="widget-title">
-                                <h5>QUICK LINK</h5>
+                                <h5>Hızlı Linkler</h5>
                             </div>
                             <nav class="widget-nav">
                                 <ul>
@@ -220,7 +220,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget">
                             <div class="widget-title">
-                                <h5>BEST SELLER</h5>
+                                <h5>En Çok Satan</h5>
                             </div>
 
                             <!-- Single Best Seller Products -->
@@ -255,9 +255,9 @@
                             </div>
 
                             <div class="contact-information">
-                                <p><span>Address:</span> Aksaz Mahallesi Yeni Sokak No:32 Manavgat/ANTALYA</p>
-                                <p><span>Phone:</span> 05340862798</p>
-                                <p><span>Email:</span> ahmetaliunsal@posta.mu.edu.tr</p>
+                                <a href="https://goo.gl/maps/m9NJgZAmHs8nn7LS6"><p><span>Address:</span> Aksaz Mahallesi Yeni Sokak No:32 Manavgat/ANTALYA</p></a>
+                                <a href="tel:05340862798"><p><span>Phone:</span> 05340862798</p></a>
+                                <a href="mailto:ahmetaliunsal@posta.mu.edu.tr"><p><span>Email:</span> ahmetaliunsal@posta.mu.edu.tr</p></a>
                                 <p><span>Çalışma Saatimiz:</span> Pazartesi-Cumartesi: 09:00 ile 17:00 arası </p>
 
                             </div>
@@ -293,7 +293,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                     <li><a href="#">Service</a></li>
                                     <li><a href="#">Portfolio</a></li>
                                     <li><a href="#">Yazılar</a></li>
-                                    <li><a href="#">İletişim</a></li>
+                                    <li><a href="Iletisim.aspx">İletişim</a></li>
                                 </ul>
                             </nav>
                         </div>
