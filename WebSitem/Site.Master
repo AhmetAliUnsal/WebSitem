@@ -102,11 +102,11 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="template/index.html">Anasayfa</a></li>
-                                    <li><a href="template/about.html">Hakkımızda</a></li>
+                                    <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
                                     <li><a href="#">Sayfalar</a>
                                         <ul class="dropdown">
                                             <li><a href="template/index.html">Anasayfa</a></li>
-                                            <li><a href="template/about.html">Hakkımızda</a></li>
+                                            <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
                                             <li><a href="template/shop.html">Alışveriş</a>
                                                 <ul class="dropdown">
                                                     <li><a href="template/shop.html">Alışveriş</a></li>
@@ -115,10 +115,10 @@
                                                     <li><a href="template/checkout.html">Adres</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="template/portfolio.html">Portfolio</a>
+                                            <li><a href="Portföyümüz.aspx">Portföy</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="template/portfolio.html">Portfolio</a></li>
-                                                    <li><a href="template/single-portfolio.html">Portfolio Details</a></li>
+                                                    <li><a href="Portföyümüz.aspx">Portföy</a></li>
+                                                    <li><a href="template/single-portfolio.html">Portföy Detay</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="template/blog.html">Yazılar</a>
@@ -130,8 +130,8 @@
                                             <li><a href="Iletisim.aspx">İletişim</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="template/shop.html">Shop</a></li>
-                                    <li><a href="template/portfolio.html">Portfolio</a></li>
+                                    <li><a href="template/shop.html">Market</a></li>
+                                    <li><a href="Portföyümüz.aspx">Portföy</a></li>
                                     <li><a href="Iletisim.aspx">İletişim</a></li>
                                 </ul>
 
@@ -182,7 +182,7 @@
                             <div class="footer-logo mb-30">
                                 <a href="#"><img src="template/img/core-img/logo.png" alt=""></a>
                             </div>
-                            <p>Manavgat ilçesinde fidancılık ile başlayan serüvenimiz; Tüm Türkiye'ye hizmet verebilmek için emin adımlarla çalışıyoruz. </p>
+                            <p>Manavgat ilçesinde fidancılık ile başlayan serüvenimiz; Tüm Türkiye'ye hizmet verebilmek için emin adımlarla ilerliyoruz. </p>
                             <div class="social-info">
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -289,9 +289,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             <nav>
                                 <ul>
                                     <li><a href="#">Anasayfa</a></li>
-                                    <li><a href="#">Hakkımızda</a></li>
+                                    <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
                                     <li><a href="#">Service</a></li>
-                                    <li><a href="#">Portfolio</a></li>
+                                    <li><a href="Portföyümüz.aspx">Portföy</a></li>
                                     <li><a href="#">Yazılar</a></li>
                                     <li><a href="Iletisim.aspx">İletişim</a></li>
                                 </ul>
