@@ -159,8 +159,8 @@
                             </div>
                             <!-- Content -->
                             <div class="service-content">
-                                <h5>Plants Care</h5>
-                                <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                                <h5>Bitki Bakımı</h5>
+                                <p>Her fidanın sağlıklı bir şekilde büyüyebilmesi, gelişebilmesi için yapılması gereken işlemler vardır. Uzman ekibimizden bu işlemler hakkında yardım alabilirsiniz.</p>
                             </div>
                         </div>
 
@@ -172,8 +172,8 @@
                             </div>
                             <!-- Content -->
                             <div class="service-content">
-                                <h5>Pressure Washing</h5>
-                                <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                                <h5>Sulama Sistemleri</h5>
+                                <p>Her fidanın su ihtiyacı farklıdır. Bu yüzden alacağınız fidanlara özel sulama sistemleri önermekteyiz.</p>
                             </div>
                         </div>
 
@@ -185,8 +185,8 @@
                             </div>
                             <!-- Content -->
                             <div class="service-content">
-                                <h5>Tree Service &amp; Trimming</h5>
-                                <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                                <h5>Ağaç Hizmeti &amp; Kırpma, Budama</h5>
+                                <p>Ağaç bakımı,budaması, kırpma gibi işlemleri de uzman ekibimizden bilgi alarak yapabilirsiniz.</p>
                             </div>
                         </div>
 
@@ -196,7 +196,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="alazea-video-area bg-overlay mb-100">
                         <img src="template/img/bg-img/23.jpg" alt="">
-                        <a href="http://www.youtube.com/watch?v=7HKoqNJtMTQ" class="video-icon">
+                        <a href="https://www.youtube.com/watch?v=JqE7KeAULdI" class="video-icon">
                             <i class="fa fa-play" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -225,13 +225,13 @@
                                     <div class="testimonial-content">
                                         <!-- Section Heading -->
                                         <div class="section-heading">
-                                            <h2>TESTIMONIAL</h2>
-                                            <p>Some kind words from clients about Alazea</p>
+                                            <h2>Müşterilerimiz</h2>
+                                            <p>Müşterilerden Alazea hakkında bazı nazik sözler</p>
                                         </div>
-                                        <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
+                                        <p>“Alazea daha önce hiç duymamıştım. Etrafımdaki arkadaşlarım onlar ile çalışmam gerektiğini işlerinde bir numara olduklarını söylemişlerdi. Ben de denemek istedim. Deneyimlerimin sonunda çok ilgili olduklarını, hataya yer bırakmadıklarını ve birinci öncelikleri biz yani müşterileri olduğunu gördüm. İyiki arkadaşlarımın tavsiyesine uyup onlarla çalışmaya başlamışım. Beni çok büyük derdin altından kurtarmış oldular. Onlara minnettarım.”</p>
                                         <div class="testimonial-author-info">
-                                            <h6>Mr. Nick Jonas</h6>
-                                            <p>CEO of NAVATECH</p>
+                                            <h6>Bayram Can</h6>
+                                            <p>ÇKM A.Ş. Ceo</p>
                                         </div>
                                     </div>
                                 </div>
@@ -250,13 +250,13 @@
                                     <div class="testimonial-content">
                                         <!-- Section Heading -->
                                         <div class="section-heading">
-                                            <h2>TESTIMONIAL</h2>
-                                            <p>Some kind words from clients about Alazea</p>
+                                            <h2>Müşterilerimiz</h2>
+                                            <p>Müşterilerden Alazea hakkında bazı nazik sözler</p>
                                         </div>
-                                        <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
+                                        <p>“Çok profesyonel bir ekipleri bulunmakta. Daha önce başka firmalar ile çalışırken fidanlarla ilgili çok sorunlar yaşadım. Alazea ile bu sorunlarım ortadan kalktı. Hem ben mutluyum hem de benim müşterilerim. Çok teşekkür ederim Alazea.”</p>
                                         <div class="testimonial-author-info">
-                                            <h6>Mr. Nazrul Islam</h6>
-                                            <p>CEO of NAVATECH</p>
+                                            <h6>Selen Demir</h6>
+                                            <p>Yayla Filiz A.Ş. Ceo</p>
                                         </div>
                                     </div>
                                 </div>
@@ -275,13 +275,13 @@
                                     <div class="testimonial-content">
                                         <!-- Section Heading -->
                                         <div class="section-heading">
-                                            <h2>TESTIMONIAL</h2>
-                                            <p>Some kind words from clients about Alazea</p>
+                                            <h2>Müşterilerimiz</h2>
+                                            <p>Müşterilerden Alazea hakkında bazı nazik sözler</p>
                                         </div>
-                                        <p>“Alazea is a pleasure to work with. Their ideas are creative, they came up with imaginative solutions to some tricky issues, their landscaping and planting contacts are equally excellent we have a beautiful but also manageable garden as a result. Thank you!”</p>
+                                        <p>“Alazea ile çalışmak bir zevk. Fikirleri yaratıcı, bazı zorlu sorunlara yaratıcı çözümler buldular, fidanları eşit derecede mükemmel sonuç olarak güzel ama aynı zamanda artık mükemmel bir bahçemiz var. Teşekkür ederim!”</p>
                                         <div class="testimonial-author-info">
-                                            <h6>Mr. Jonas Nick</h6>
-                                            <p>CEO of NAVATECH</p>
+                                            <h6>Burak AKSOY</h6>
+                                        
                                         </div>
                                     </div>
                                 </div>

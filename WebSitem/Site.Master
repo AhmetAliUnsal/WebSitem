@@ -17,6 +17,8 @@
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="template/style.css">
+  
+  
 
 </head>
 
@@ -49,14 +51,14 @@
                                 <!-- Language Dropdown -->
                                 <div class="language-dropdown">
                                     <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
+                                        <button class="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Diller</button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">USA</a>
-                                            <a class="dropdown-item" href="#">UK</a>
-                                            <a class="dropdown-item" href="#">Bangla</a>
-                                            <a class="dropdown-item" href="#">Hindi</a>
-                                            <a class="dropdown-item" href="#">Spanish</a>
-                                            <a class="dropdown-item" href="#">Latin</a>
+                                            <a class="dropdown-item" href="#" onclick="doGTranslate('auto|tr');return false;">Turkish</a>
+                                            <a class="dropdown-item" href="#" onclick="doGTranslate('auto|en');return false;">English</a>
+                                            <a class="dropdown-item" href="#" onclick="doGTranslate('auto|fr');return false;">French</a>
+                                            <a class="dropdown-item" href="#" onclick="doGTranslate('en|ru');return false;">Russian</a>
+                                            <a class="dropdown-item" href="#" onclick="doGTranslate('auto|de');return false;">German</a>
+                                            <a class="dropdown-item" href="#" onclick="doGTranslate('auto|zh-TW');return false;">Chinese</a>
                                         </div>
                                     </div>
                                 </div>
@@ -315,6 +317,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="template/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="template/js/active.js"></script>
+
+    <script type="text/javascript" src="template/js/dil.js"></script>
+    
 </body>
 
 </html>

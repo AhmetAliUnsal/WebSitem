@@ -160,6 +160,7 @@
     <Content Include="template\js\active.js" />
     <Content Include="template\js\bootstrap\bootstrap.min.js" />
     <Content Include="template\js\bootstrap\popper.min.js" />
+    <Content Include="template\js\dil.js" />
     <Content Include="template\js\jquery\jquery-2.2.4.min.js" />
     <Content Include="template\js\plugins\plugins.js" />
     <Content Include="template\portfolio.html" />
