@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="col-12">
                                     <input type="hidden" name="_next" value="https://site.io/thanks.html">
-                                    <button type="submit" class="btn alazea-btn mt-15">Gönder</button>
+                                    <button type="submit" id="gonder" class="btn alazea-btn mt-15">Gönder</button>
                                 </div>
                             </div>
                         </form>
@@ -107,4 +107,6 @@
         </div>
     </section>
     <!-- ##### Contact Area End ##### -->
+
+
 </asp:Content>
