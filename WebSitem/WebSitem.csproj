@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -261,6 +262,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebSitem.Business\WebSitem.Business.csproj">
+      <Project>{5d99dbc4-1494-4ef3-908a-cee2756121f3}</Project>
+      <Name>WebSitem.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebSitem.DataAccess\WebSitem.DataAccess.csproj">
+      <Project>{70cf0c21-5e89-4951-94ba-77972572b4b4}</Project>
+      <Name>WebSitem.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

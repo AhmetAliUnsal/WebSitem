@@ -20,4 +20,5 @@
         </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="OrtaAlan" runat="server">
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
 </asp:Content>

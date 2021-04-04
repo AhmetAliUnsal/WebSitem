@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace WebSitem
 {
@@ -11,6 +12,17 @@ namespace WebSitem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //string baglantim = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["baglanti"].ConnectionString;
+            //SqlConnection baglan = new SqlConnection(baglantim);
+
+            //baglan.Open();
+
+            //List<string> getir = new List<string>();
 
         }
     }
