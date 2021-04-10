@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="websayfaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="durum">
+          <Key>
+            <PropertyRef Name="durumid" />
+          </Key>
+          <Property Name="durumid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="durumad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="faturaadres">
+          <Key>
+            <PropertyRef Name="faturaadresid" />
+          </Key>
+          <Property Name="faturaadresid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="musterifkid" Type="int" />
+          <Property Name="ilfkid" Type="int" />
+          <Property Name="ilcefkid" Type="int" />
+          <Property Name="faturaadres" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="gonderimadres">
+          <Key>
+            <PropertyRef Name="gonderimadresid" />
+          </Key>
+          <Property Name="gonderimadresid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="musterifkid" Type="int" />
+          <Property Name="ilfkid" Type="int" />
+          <Property Name="ilcefkid" Type="int" />
+          <Property Name="gonderimadres" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="ilid" />
+          </Key>
+          <Property Name="ilid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ilad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ilce">
+          <Key>
+            <PropertyRef Name="ilceid" />
+          </Key>
+          <Property Name="ilceid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ilfkid" Type="int" />
+          <Property Name="ilcead" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="kategori">
+          <Key>
+            <PropertyRef Name="kategoriid" />
+          </Key>
+          <Property Name="kategoriid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kategoriad" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="musteri">
+          <Key>
+            <PropertyRef Name="musteriid" />
+          </Key>
+          <Property Name="musteriid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="musterikullaniciadi" Type="varchar" MaxLength="50" />
+          <Property Name="musteriadi" Type="varchar" MaxLength="100" />
+          <Property Name="musteriemail" Type="varchar" MaxLength="200" />
+          <Property Name="musteritel" Type="varchar" MaxLength="11" />
+          <Property Name="musterikayittarih" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="odemetipi">
+          <Key>
+            <PropertyRef Name="odemetipiid" />
+          </Key>
+          <Property Name="odemetipiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="odemetipiad" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sepet">
+          <Key>
+            <PropertyRef Name="sepetid" />
+          </Key>
+          <Property Name="sepetid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="musterifkid" Type="int" />
+          <Property Name="urunfkid" Type="int" />
+          <Property Name="gonderimadresfkid" Type="int" />
+          <Property Name="faturaadresfkid" Type="int" />
+          <Property Name="urunadet" Type="int" />
+          <Property Name="fiyat" Type="int" />
+        </EntityType>
+        <EntityType Name="siparis">
+          <Key>
+            <PropertyRef Name="siparisid" />
+          </Key>
+          <Property Name="siparisid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sepetfkid" Type="int" />
+          <Property Name="toplamfiyat" Type="int" />
+          <Property Name="odemetipifkid" Type="int" />
+          <Property Name="siparistarihi" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="urun">
+          <Key>
+            <PropertyRef Name="urunid" />
+          </Key>
+          <Property Name="urunid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunadi" Type="varchar" MaxLength="100" />
+          <Property Name="urunkategorifkid" Type="int" />
+          <Property Name="urunstok" Type="int" />
+          <Property Name="urunbirimfiyat" Type="int" />
+          <Property Name="durumfkid" Type="int" />
+        </EntityType>
+        <Association Name="FK_faturaadres_il">
+          <End Role="il" Type="Self.il" Multiplicity="0..1" />
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilid" />
+            </Principal>
+            <Dependent Role="faturaadres">
+              <PropertyRef Name="ilfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_faturaadres_ilce">
+          <End Role="ilce" Type="Self.ilce" Multiplicity="0..1" />
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilce">
+              <PropertyRef Name="ilceid" />
+            </Principal>
+            <Dependent Role="faturaadres">
+              <PropertyRef Name="ilcefkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_faturaadres_musteri">
+          <End Role="musteri" Type="Self.musteri" Multiplicity="0..1" />
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteri">
+              <PropertyRef Name="musteriid" />
+            </Principal>
+            <Dependent Role="faturaadres">
+              <PropertyRef Name="musterifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gonderimadres_il">
+          <End Role="il" Type="Self.il" Multiplicity="0..1" />
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilid" />
+            </Principal>
+            <Dependent Role="gonderimadres">
+              <PropertyRef Name="ilfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gonderimadres_ilce1">
+          <End Role="ilce" Type="Self.ilce" Multiplicity="0..1" />
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilce">
+              <PropertyRef Name="ilceid" />
+            </Principal>
+            <Dependent Role="gonderimadres">
+              <PropertyRef Name="ilcefkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gonderimadres_musteri">
+          <End Role="musteri" Type="Self.musteri" Multiplicity="0..1" />
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteri">
+              <PropertyRef Name="musteriid" />
+            </Principal>
+            <Dependent Role="gonderimadres">
+              <PropertyRef Name="musterifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ilce_ilce">
+          <End Role="il" Type="Self.il" Multiplicity="0..1" />
+          <End Role="ilce" Type="Self.ilce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilid" />
+            </Principal>
+            <Dependent Role="ilce">
+              <PropertyRef Name="ilfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_faturaadres">
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="faturaadres">
+              <PropertyRef Name="faturaadresid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="gonderimadresfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_gonderimadres">
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gonderimadres">
+              <PropertyRef Name="gonderimadresid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="gonderimadresfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_musteri">
+          <End Role="musteri" Type="Self.musteri" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteri">
+              <PropertyRef Name="musteriid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="musterifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_urun">
+          <End Role="urun" Type="Self.urun" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urun">
+              <PropertyRef Name="urunid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="urunfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_odemetipi">
+          <End Role="odemetipi" Type="Self.odemetipi" Multiplicity="0..1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="odemetipi">
+              <PropertyRef Name="odemetipiid" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="odemetipifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_sepet">
+          <End Role="sepet" Type="Self.sepet" Multiplicity="0..1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sepet">
+              <PropertyRef Name="sepetid" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="sepetfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urun_durum">
+          <End Role="durum" Type="Self.durum" Multiplicity="0..1" />
+          <End Role="urun" Type="Self.urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="durum">
+              <PropertyRef Name="durumid" />
+            </Principal>
+            <Dependent Role="urun">
+              <PropertyRef Name="durumfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urun_kategori">
+          <End Role="kategori" Type="Self.kategori" Multiplicity="0..1" />
+          <End Role="urun" Type="Self.urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategori">
+              <PropertyRef Name="kategoriid" />
+            </Principal>
+            <Dependent Role="urun">
+              <PropertyRef Name="urunkategorifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="websayfaModelStoreContainer">
+          <EntitySet Name="durum" EntityType="Self.durum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="faturaadres" EntityType="Self.faturaadres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gonderimadres" EntityType="Self.gonderimadres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="il" EntityType="Self.il" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ilce" EntityType="Self.ilce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kategori" EntityType="Self.kategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="musteri" EntityType="Self.musteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odemetipi" EntityType="Self.odemetipi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sepet" EntityType="Self.sepet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siparis" EntityType="Self.siparis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urun" EntityType="Self.urun" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_faturaadres_il" Association="Self.FK_faturaadres_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="faturaadres" EntitySet="faturaadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_faturaadres_ilce" Association="Self.FK_faturaadres_ilce">
+            <End Role="ilce" EntitySet="ilce" />
+            <End Role="faturaadres" EntitySet="faturaadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_faturaadres_musteri" Association="Self.FK_faturaadres_musteri">
+            <End Role="musteri" EntitySet="musteri" />
+            <End Role="faturaadres" EntitySet="faturaadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gonderimadres_il" Association="Self.FK_gonderimadres_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gonderimadres_ilce1" Association="Self.FK_gonderimadres_ilce1">
+            <End Role="ilce" EntitySet="ilce" />
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gonderimadres_musteri" Association="Self.FK_gonderimadres_musteri">
+            <End Role="musteri" EntitySet="musteri" />
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ilce_ilce" Association="Self.FK_ilce_ilce">
+            <End Role="il" EntitySet="il" />
+            <End Role="ilce" EntitySet="ilce" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_faturaadres" Association="Self.FK_sepet_faturaadres">
+            <End Role="faturaadres" EntitySet="faturaadres" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_gonderimadres" Association="Self.FK_sepet_gonderimadres">
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_musteri" Association="Self.FK_sepet_musteri">
+            <End Role="musteri" EntitySet="musteri" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_urun" Association="Self.FK_sepet_urun">
+            <End Role="urun" EntitySet="urun" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_odemetipi" Association="Self.FK_siparis_odemetipi">
+            <End Role="odemetipi" EntitySet="odemetipi" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_sepet" Association="Self.FK_siparis_sepet">
+            <End Role="sepet" EntitySet="sepet" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urun_durum" Association="Self.FK_urun_durum">
+            <End Role="durum" EntitySet="durum" />
+            <End Role="urun" EntitySet="urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urun_kategori" Association="Self.FK_urun_kategori">
+            <End Role="kategori" EntitySet="kategori" />
+            <End Role="urun" EntitySet="urun" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="websayfaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="durum">
+          <Key>
+            <PropertyRef Name="durumid" />
+          </Key>
+          <Property Name="durumid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="durumad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="urun" Relationship="Self.FK_urun_durum" FromRole="durum" ToRole="urun" />
+        </EntityType>
+        <EntityType Name="faturaadres">
+          <Key>
+            <PropertyRef Name="faturaadresid" />
+          </Key>
+          <Property Name="faturaadresid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="musterifkid" Type="Int32" />
+          <Property Name="ilfkid" Type="Int32" />
+          <Property Name="ilcefkid" Type="Int32" />
+          <Property Name="faturaadres1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="il" Relationship="Self.FK_faturaadres_il" FromRole="faturaadres" ToRole="il" />
+          <NavigationProperty Name="ilce" Relationship="Self.FK_faturaadres_ilce" FromRole="faturaadres" ToRole="ilce" />
+          <NavigationProperty Name="musteri" Relationship="Self.FK_faturaadres_musteri" FromRole="faturaadres" ToRole="musteri" />
+          <NavigationProperty Name="sepet" Relationship="Self.FK_sepet_faturaadres" FromRole="faturaadres" ToRole="sepet" />
+        </EntityType>
+        <EntityType Name="gonderimadres">
+          <Key>
+            <PropertyRef Name="gonderimadresid" />
+          </Key>
+          <Property Name="gonderimadresid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="musterifkid" Type="Int32" />
+          <Property Name="ilfkid" Type="Int32" />
+          <Property Name="ilcefkid" Type="Int32" />
+          <Property Name="gonderimadres1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="il" Relationship="Self.FK_gonderimadres_il" FromRole="gonderimadres" ToRole="il" />
+          <NavigationProperty Name="ilce" Relationship="Self.FK_gonderimadres_ilce1" FromRole="gonderimadres" ToRole="ilce" />
+          <NavigationProperty Name="musteri" Relationship="Self.FK_gonderimadres_musteri" FromRole="gonderimadres" ToRole="musteri" />
+          <NavigationProperty Name="sepet" Relationship="Self.FK_sepet_gonderimadres" FromRole="gonderimadres" ToRole="sepet" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="ilid" />
+          </Key>
+          <Property Name="ilid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ilad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="faturaadres" Relationship="Self.FK_faturaadres_il" FromRole="il" ToRole="faturaadres" />
+          <NavigationProperty Name="gonderimadres" Relationship="Self.FK_gonderimadres_il" FromRole="il" ToRole="gonderimadres" />
+          <NavigationProperty Name="ilce" Relationship="Self.FK_ilce_ilce" FromRole="il" ToRole="ilce" />
+        </EntityType>
+        <EntityType Name="ilce">
+          <Key>
+            <PropertyRef Name="ilceid" />
+          </Key>
+          <Property Name="ilceid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ilfkid" Type="Int32" />
+          <Property Name="ilcead" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="faturaadres" Relationship="Self.FK_faturaadres_ilce" FromRole="ilce" ToRole="faturaadres" />
+          <NavigationProperty Name="gonderimadres" Relationship="Self.FK_gonderimadres_ilce1" FromRole="ilce" ToRole="gonderimadres" />
+          <NavigationProperty Name="il" Relationship="Self.FK_ilce_ilce" FromRole="ilce" ToRole="il" />
+        </EntityType>
+        <EntityType Name="kategori">
+          <Key>
+            <PropertyRef Name="kategoriid" />
+          </Key>
+          <Property Name="kategoriid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="urun" Relationship="Self.FK_urun_kategori" FromRole="kategori" ToRole="urun" />
+        </EntityType>
+        <EntityType Name="musteri">
+          <Key>
+            <PropertyRef Name="musteriid" />
+          </Key>
+          <Property Name="musteriid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="musterikullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="musteriadi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="musteriemail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="musteritel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="musterikayittarih" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="faturaadres" Relationship="Self.FK_faturaadres_musteri" FromRole="musteri" ToRole="faturaadres" />
+          <NavigationProperty Name="gonderimadres" Relationship="Self.FK_gonderimadres_musteri" FromRole="musteri" ToRole="gonderimadres" />
+          <NavigationProperty Name="sepet" Relationship="Self.FK_sepet_musteri" FromRole="musteri" ToRole="sepet" />
+        </EntityType>
+        <EntityType Name="odemetipi">
+          <Key>
+            <PropertyRef Name="odemetipiid" />
+          </Key>
+          <Property Name="odemetipiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="odemetipiad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_odemetipi" FromRole="odemetipi" ToRole="siparis" />
+        </EntityType>
+        <EntityType Name="sepet">
+          <Key>
+            <PropertyRef Name="sepetid" />
+          </Key>
+          <Property Name="sepetid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="musterifkid" Type="Int32" />
+          <Property Name="urunfkid" Type="Int32" />
+          <Property Name="gonderimadresfkid" Type="Int32" />
+          <Property Name="faturaadresfkid" Type="Int32" />
+          <Property Name="urunadet" Type="Int32" />
+          <Property Name="fiyat" Type="Int32" />
+          <NavigationProperty Name="faturaadres" Relationship="Self.FK_sepet_faturaadres" FromRole="sepet" ToRole="faturaadres" />
+          <NavigationProperty Name="gonderimadres" Relationship="Self.FK_sepet_gonderimadres" FromRole="sepet" ToRole="gonderimadres" />
+          <NavigationProperty Name="musteri" Relationship="Self.FK_sepet_musteri" FromRole="sepet" ToRole="musteri" />
+          <NavigationProperty Name="urun" Relationship="Self.FK_sepet_urun" FromRole="sepet" ToRole="urun" />
+          <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_sepet" FromRole="sepet" ToRole="siparis" />
+        </EntityType>
+        <EntityType Name="siparis">
+          <Key>
+            <PropertyRef Name="siparisid" />
+          </Key>
+          <Property Name="siparisid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sepetfkid" Type="Int32" />
+          <Property Name="toplamfiyat" Type="Int32" />
+          <Property Name="odemetipifkid" Type="Int32" />
+          <Property Name="siparistarihi" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="odemetipi" Relationship="Self.FK_siparis_odemetipi" FromRole="siparis" ToRole="odemetipi" />
+          <NavigationProperty Name="sepet" Relationship="Self.FK_siparis_sepet" FromRole="siparis" ToRole="sepet" />
+        </EntityType>
+        <EntityType Name="urun">
+          <Key>
+            <PropertyRef Name="urunid" />
+          </Key>
+          <Property Name="urunid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunadi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="urunkategorifkid" Type="Int32" />
+          <Property Name="urunstok" Type="Int32" />
+          <Property Name="urunbirimfiyat" Type="Int32" />
+          <Property Name="durumfkid" Type="Int32" />
+          <NavigationProperty Name="durum" Relationship="Self.FK_urun_durum" FromRole="urun" ToRole="durum" />
+          <NavigationProperty Name="kategori" Relationship="Self.FK_urun_kategori" FromRole="urun" ToRole="kategori" />
+          <NavigationProperty Name="sepet" Relationship="Self.FK_sepet_urun" FromRole="urun" ToRole="sepet" />
+        </EntityType>
+        <Association Name="FK_urun_durum">
+          <End Role="durum" Type="Self.durum" Multiplicity="0..1" />
+          <End Role="urun" Type="Self.urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="durum">
+              <PropertyRef Name="durumid" />
+            </Principal>
+            <Dependent Role="urun">
+              <PropertyRef Name="durumfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_faturaadres_il">
+          <End Role="il" Type="Self.il" Multiplicity="0..1" />
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilid" />
+            </Principal>
+            <Dependent Role="faturaadres">
+              <PropertyRef Name="ilfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_faturaadres_ilce">
+          <End Role="ilce" Type="Self.ilce" Multiplicity="0..1" />
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilce">
+              <PropertyRef Name="ilceid" />
+            </Principal>
+            <Dependent Role="faturaadres">
+              <PropertyRef Name="ilcefkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_faturaadres_musteri">
+          <End Role="musteri" Type="Self.musteri" Multiplicity="0..1" />
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteri">
+              <PropertyRef Name="musteriid" />
+            </Principal>
+            <Dependent Role="faturaadres">
+              <PropertyRef Name="musterifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_faturaadres">
+          <End Role="faturaadres" Type="Self.faturaadres" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="faturaadres">
+              <PropertyRef Name="faturaadresid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="gonderimadresfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gonderimadres_il">
+          <End Role="il" Type="Self.il" Multiplicity="0..1" />
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilid" />
+            </Principal>
+            <Dependent Role="gonderimadres">
+              <PropertyRef Name="ilfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gonderimadres_ilce1">
+          <End Role="ilce" Type="Self.ilce" Multiplicity="0..1" />
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilce">
+              <PropertyRef Name="ilceid" />
+            </Principal>
+            <Dependent Role="gonderimadres">
+              <PropertyRef Name="ilcefkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gonderimadres_musteri">
+          <End Role="musteri" Type="Self.musteri" Multiplicity="0..1" />
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteri">
+              <PropertyRef Name="musteriid" />
+            </Principal>
+            <Dependent Role="gonderimadres">
+              <PropertyRef Name="musterifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_gonderimadres">
+          <End Role="gonderimadres" Type="Self.gonderimadres" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gonderimadres">
+              <PropertyRef Name="gonderimadresid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="gonderimadresfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ilce_ilce">
+          <End Role="il" Type="Self.il" Multiplicity="0..1" />
+          <End Role="ilce" Type="Self.ilce" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilid" />
+            </Principal>
+            <Dependent Role="ilce">
+              <PropertyRef Name="ilfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_urun_kategori">
+          <End Role="kategori" Type="Self.kategori" Multiplicity="0..1" />
+          <End Role="urun" Type="Self.urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategori">
+              <PropertyRef Name="kategoriid" />
+            </Principal>
+            <Dependent Role="urun">
+              <PropertyRef Name="urunkategorifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_musteri">
+          <End Role="musteri" Type="Self.musteri" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="musteri">
+              <PropertyRef Name="musteriid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="musterifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_odemetipi">
+          <End Role="odemetipi" Type="Self.odemetipi" Multiplicity="0..1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="odemetipi">
+              <PropertyRef Name="odemetipiid" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="odemetipifkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sepet_urun">
+          <End Role="urun" Type="Self.urun" Multiplicity="0..1" />
+          <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urun">
+              <PropertyRef Name="urunid" />
+            </Principal>
+            <Dependent Role="sepet">
+              <PropertyRef Name="urunfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_sepet">
+          <End Role="sepet" Type="Self.sepet" Multiplicity="0..1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sepet">
+              <PropertyRef Name="sepetid" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="sepetfkid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="websayfaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="durum" EntityType="Self.durum" />
+          <EntitySet Name="faturaadres" EntityType="Self.faturaadres" />
+          <EntitySet Name="gonderimadres" EntityType="Self.gonderimadres" />
+          <EntitySet Name="il" EntityType="Self.il" />
+          <EntitySet Name="ilce" EntityType="Self.ilce" />
+          <EntitySet Name="kategori" EntityType="Self.kategori" />
+          <EntitySet Name="musteri" EntityType="Self.musteri" />
+          <EntitySet Name="odemetipi" EntityType="Self.odemetipi" />
+          <EntitySet Name="sepet" EntityType="Self.sepet" />
+          <EntitySet Name="siparis" EntityType="Self.siparis" />
+          <EntitySet Name="urun" EntityType="Self.urun" />
+          <AssociationSet Name="FK_urun_durum" Association="Self.FK_urun_durum">
+            <End Role="durum" EntitySet="durum" />
+            <End Role="urun" EntitySet="urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_faturaadres_il" Association="Self.FK_faturaadres_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="faturaadres" EntitySet="faturaadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_faturaadres_ilce" Association="Self.FK_faturaadres_ilce">
+            <End Role="ilce" EntitySet="ilce" />
+            <End Role="faturaadres" EntitySet="faturaadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_faturaadres_musteri" Association="Self.FK_faturaadres_musteri">
+            <End Role="musteri" EntitySet="musteri" />
+            <End Role="faturaadres" EntitySet="faturaadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_faturaadres" Association="Self.FK_sepet_faturaadres">
+            <End Role="faturaadres" EntitySet="faturaadres" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gonderimadres_il" Association="Self.FK_gonderimadres_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gonderimadres_ilce1" Association="Self.FK_gonderimadres_ilce1">
+            <End Role="ilce" EntitySet="ilce" />
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gonderimadres_musteri" Association="Self.FK_gonderimadres_musteri">
+            <End Role="musteri" EntitySet="musteri" />
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_gonderimadres" Association="Self.FK_sepet_gonderimadres">
+            <End Role="gonderimadres" EntitySet="gonderimadres" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ilce_ilce" Association="Self.FK_ilce_ilce">
+            <End Role="il" EntitySet="il" />
+            <End Role="ilce" EntitySet="ilce" />
+          </AssociationSet>
+          <AssociationSet Name="FK_urun_kategori" Association="Self.FK_urun_kategori">
+            <End Role="kategori" EntitySet="kategori" />
+            <End Role="urun" EntitySet="urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_musteri" Association="Self.FK_sepet_musteri">
+            <End Role="musteri" EntitySet="musteri" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_odemetipi" Association="Self.FK_siparis_odemetipi">
+            <End Role="odemetipi" EntitySet="odemetipi" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sepet_urun" Association="Self.FK_sepet_urun">
+            <End Role="urun" EntitySet="urun" />
+            <End Role="sepet" EntitySet="sepet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_sepet" Association="Self.FK_siparis_sepet">
+            <End Role="sepet" EntitySet="sepet" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="websayfaModelStoreContainer" CdmEntityContainer="websayfaEntities">
+          <EntitySetMapping Name="durum">
+            <EntityTypeMapping TypeName="websayfaModel.durum">
+              <MappingFragment StoreEntitySet="durum">
+                <ScalarProperty Name="durumid" ColumnName="durumid" />
+                <ScalarProperty Name="durumad" ColumnName="durumad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="faturaadres">
+            <EntityTypeMapping TypeName="websayfaModel.faturaadres">
+              <MappingFragment StoreEntitySet="faturaadres">
+                <ScalarProperty Name="faturaadresid" ColumnName="faturaadresid" />
+                <ScalarProperty Name="musterifkid" ColumnName="musterifkid" />
+                <ScalarProperty Name="ilfkid" ColumnName="ilfkid" />
+                <ScalarProperty Name="ilcefkid" ColumnName="ilcefkid" />
+                <ScalarProperty Name="faturaadres1" ColumnName="faturaadres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gonderimadres">
+            <EntityTypeMapping TypeName="websayfaModel.gonderimadres">
+              <MappingFragment StoreEntitySet="gonderimadres">
+                <ScalarProperty Name="gonderimadresid" ColumnName="gonderimadresid" />
+                <ScalarProperty Name="musterifkid" ColumnName="musterifkid" />
+                <ScalarProperty Name="ilfkid" ColumnName="ilfkid" />
+                <ScalarProperty Name="ilcefkid" ColumnName="ilcefkid" />
+                <ScalarProperty Name="gonderimadres1" ColumnName="gonderimadres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="il">
+            <EntityTypeMapping TypeName="websayfaModel.il">
+              <MappingFragment StoreEntitySet="il">
+                <ScalarProperty Name="ilid" ColumnName="ilid" />
+                <ScalarProperty Name="ilad" ColumnName="ilad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ilce">
+            <EntityTypeMapping TypeName="websayfaModel.ilce">
+              <MappingFragment StoreEntitySet="ilce">
+                <ScalarProperty Name="ilceid" ColumnName="ilceid" />
+                <ScalarProperty Name="ilfkid" ColumnName="ilfkid" />
+                <ScalarProperty Name="ilcead" ColumnName="ilcead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kategori">
+            <EntityTypeMapping TypeName="websayfaModel.kategori">
+              <MappingFragment StoreEntitySet="kategori">
+                <ScalarProperty Name="kategoriid" ColumnName="kategoriid" />
+                <ScalarProperty Name="kategoriad" ColumnName="kategoriad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="musteri">
+            <EntityTypeMapping TypeName="websayfaModel.musteri">
+              <MappingFragment StoreEntitySet="musteri">
+                <ScalarProperty Name="musteriid" ColumnName="musteriid" />
+                <ScalarProperty Name="musterikullaniciadi" ColumnName="musterikullaniciadi" />
+                <ScalarProperty Name="musteriadi" ColumnName="musteriadi" />
+                <ScalarProperty Name="musteriemail" ColumnName="musteriemail" />
+                <ScalarProperty Name="musteritel" ColumnName="musteritel" />
+                <ScalarProperty Name="musterikayittarih" ColumnName="musterikayittarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odemetipi">
+            <EntityTypeMapping TypeName="websayfaModel.odemetipi">
+              <MappingFragment StoreEntitySet="odemetipi">
+                <ScalarProperty Name="odemetipiid" ColumnName="odemetipiid" />
+                <ScalarProperty Name="odemetipiad" ColumnName="odemetipiad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sepet">
+            <EntityTypeMapping TypeName="websayfaModel.sepet">
+              <MappingFragment StoreEntitySet="sepet">
+                <ScalarProperty Name="sepetid" ColumnName="sepetid" />
+                <ScalarProperty Name="musterifkid" ColumnName="musterifkid" />
+                <ScalarProperty Name="urunfkid" ColumnName="urunfkid" />
+                <ScalarProperty Name="gonderimadresfkid" ColumnName="gonderimadresfkid" />
+                <ScalarProperty Name="faturaadresfkid" ColumnName="faturaadresfkid" />
+                <ScalarProperty Name="urunadet" ColumnName="urunadet" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siparis">
+            <EntityTypeMapping TypeName="websayfaModel.siparis">
+              <MappingFragment StoreEntitySet="siparis">
+                <ScalarProperty Name="siparisid" ColumnName="siparisid" />
+                <ScalarProperty Name="sepetfkid" ColumnName="sepetfkid" />
+                <ScalarProperty Name="toplamfiyat" ColumnName="toplamfiyat" />
+                <ScalarProperty Name="odemetipifkid" ColumnName="odemetipifkid" />
+                <ScalarProperty Name="siparistarihi" ColumnName="siparistarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urun">
+            <EntityTypeMapping TypeName="websayfaModel.urun">
+              <MappingFragment StoreEntitySet="urun">
+                <ScalarProperty Name="urunid" ColumnName="urunid" />
+                <ScalarProperty Name="urunadi" ColumnName="urunadi" />
+                <ScalarProperty Name="urunkategorifkid" ColumnName="urunkategorifkid" />
+                <ScalarProperty Name="urunstok" ColumnName="urunstok" />
+                <ScalarProperty Name="urunbirimfiyat" ColumnName="urunbirimfiyat" />
+                <ScalarProperty Name="durumfkid" ColumnName="durumfkid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="225f2d5d2efa4edcab2921cb4196a76b" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="websayfaModel.durum" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.faturaadres" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.gonderimadres" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.il" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.ilce" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.kategori" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.musteri" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.odemetipi" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.sepet" Width="1.5" PointX="10.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.siparis" Width="1.5" PointX="12.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="websayfaModel.urun" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="websayfaModel.FK_urun_durum" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_faturaadres_il" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_faturaadres_ilce" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_faturaadres_musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_sepet_faturaadres" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_gonderimadres_il" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_gonderimadres_ilce1" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_gonderimadres_musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_sepet_gonderimadres" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_ilce_ilce" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_urun_kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_sepet_musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_siparis_odemetipi" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_sepet_urun" ManuallyRouted="false" />
+        <AssociationConnector Association="websayfaModel.FK_siparis_sepet" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
