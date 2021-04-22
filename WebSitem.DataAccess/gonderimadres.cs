@@ -28,8 +28,8 @@ namespace WebSitem.DataAccess
     
         public virtual il il { get; set; }
         public virtual ilce ilce { get; set; }
-        public virtual musteri musteri { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sepet> sepet { get; set; }
+        public virtual musteri musteri { get; set; }
     }
 }

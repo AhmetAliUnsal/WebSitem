@@ -11,7 +11,6 @@ namespace WebSitem.DataAccess
 {
     using System;
     using System.Collections.Generic;
-
     
     public partial class musteri
     {
@@ -24,11 +23,11 @@ namespace WebSitem.DataAccess
         }
     
         public int musteriid { get; set; }
+        public string musteriTc { get; set; }
         public string musterikullaniciadi { get; set; }
         public string musteriadi { get; set; }
         public string musteriemail { get; set; }
         public string musteritel { get; set; }
-        public byte[] musterikayittarih { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<faturaadres> faturaadres { get; set; }

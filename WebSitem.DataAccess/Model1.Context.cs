@@ -31,10 +31,10 @@ namespace WebSitem.DataAccess
         public virtual DbSet<il> il { get; set; }
         public virtual DbSet<ilce> ilce { get; set; }
         public virtual DbSet<kategori> kategori { get; set; }
-        public virtual DbSet<musteri> musteri { get; set; }
         public virtual DbSet<odemetipi> odemetipi { get; set; }
         public virtual DbSet<sepet> sepet { get; set; }
         public virtual DbSet<siparis> siparis { get; set; }
         public virtual DbSet<urun> urun { get; set; }
+        public virtual DbSet<musteri> musteri { get; set; }
     }
 }

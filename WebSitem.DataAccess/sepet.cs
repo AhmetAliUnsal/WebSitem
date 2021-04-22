@@ -30,9 +30,9 @@ namespace WebSitem.DataAccess
     
         public virtual faturaadres faturaadres { get; set; }
         public virtual gonderimadres gonderimadres { get; set; }
-        public virtual musteri musteri { get; set; }
         public virtual urun urun { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<siparis> siparis { get; set; }
+        public virtual musteri musteri { get; set; }
     }
 }
