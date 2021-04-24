@@ -36,6 +36,7 @@ namespace WebSitem
             nesne1.musteriemail = TextBox5.Text;
             var değer = nesne.VeriEkleme1(nesne1);
 
+            
         }
 
         protected void Button3_Click(object sender, EventArgs e)

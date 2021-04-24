@@ -60,6 +60,25 @@ namespace WebSitem.Business
             var verilerigetir = Listele();
             return "1";
         }
+        public string MusteriEkle(WebSitem.DataAccess.musteri nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
+            yeni.musteriadi = nesne.musteriadi;
+            yeni.musteriemail = nesne.musteriemail;
+            yeni.musteritel = nesne.musteritel;
+            yeni.musteriTc = nesne.musteriTc;
+            yeni.musterisifre = nesne.musterisifre;
+            yeni.musteritur = nesne.musteritur;
+
+            ekle.musteri.Add(yeni);
+            ekle.SaveChanges();
+
+            var verilerigetir = Listele();
+            return "Başarıyla Eklenildi";
+        }
+
+
         public string VeriGüncelle(string musteriTc,WebSitem.DataAccess.musteri nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();

@@ -64,6 +64,8 @@
           <Property Name="musteriadi" Type="varchar" MaxLength="100" />
           <Property Name="musteriemail" Type="varchar" MaxLength="200" />
           <Property Name="musteritel" Type="varchar" MaxLength="11" />
+          <Property Name="musterisifre" Type="varchar" MaxLength="300" />
+          <Property Name="musteritur" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="odemetipi">
           <Key>
@@ -708,6 +710,8 @@
           <NavigationProperty Name="faturaadres" Relationship="websayfaModel.FK_faturaadres_musteri" FromRole="musteri" ToRole="faturaadres" />
           <NavigationProperty Name="gonderimadres" Relationship="websayfaModel.FK_gonderimadres_musteri" FromRole="musteri" ToRole="gonderimadres" />
           <NavigationProperty Name="sepet" Relationship="websayfaModel.FK_sepet_musteri" FromRole="musteri" ToRole="sepet" />
+          <Property Name="musterisifre" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="musteritur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_faturaadres_musteri">
           <End Type="websayfaModel.musteri" Role="musteri" Multiplicity="0..1" />
@@ -853,6 +857,8 @@
           <EntitySetMapping Name="musteri">
             <EntityTypeMapping TypeName="websayfaModel.musteri">
               <MappingFragment StoreEntitySet="musteri">
+                <ScalarProperty Name="musteritur" ColumnName="musteritur" />
+                <ScalarProperty Name="musterisifre" ColumnName="musterisifre" />
                 <ScalarProperty Name="musteritel" ColumnName="musteritel" />
                 <ScalarProperty Name="musteriemail" ColumnName="musteriemail" />
                 <ScalarProperty Name="musteriadi" ColumnName="musteriadi" />

@@ -8,5 +8,6 @@ namespace WebSitem.Business
 {
     public class Class1
     {
+        
     }
 }

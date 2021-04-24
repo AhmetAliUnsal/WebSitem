@@ -28,6 +28,8 @@ namespace WebSitem.DataAccess
         public string musteriadi { get; set; }
         public string musteriemail { get; set; }
         public string musteritel { get; set; }
+        public string musterisifre { get; set; }
+        public string musteritur { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<faturaadres> faturaadres { get; set; }
