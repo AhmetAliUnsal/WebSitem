@@ -60,8 +60,7 @@
           </Key>
           <Property Name="musteriid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="musteriTc" Type="varchar" MaxLength="11" />
-          <Property Name="musterikullaniciadi" Type="varchar" MaxLength="50" />
-          <Property Name="musteriadi" Type="varchar" MaxLength="100" />
+          <Property Name="musteriadi" Type="varchar" MaxLength="300" />
           <Property Name="musteriemail" Type="varchar" MaxLength="200" />
           <Property Name="musteritel" Type="varchar" MaxLength="11" />
           <Property Name="musterisifre" Type="varchar" MaxLength="300" />
@@ -696,22 +695,21 @@
             <End Role="musteri" EntitySet="musteri" />
             <End Role="sepet" EntitySet="sepet" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="musteri">
           <Key>
             <PropertyRef Name="musteriid" />
           </Key>
           <Property Name="musteriid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="musteriTc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="musterikullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="musteriadi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="musteriadi" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="musteriemail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="musteritel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="musterisifre" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="musteritur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="faturaadres" Relationship="websayfaModel.FK_faturaadres_musteri" FromRole="musteri" ToRole="faturaadres" />
           <NavigationProperty Name="gonderimadres" Relationship="websayfaModel.FK_gonderimadres_musteri" FromRole="musteri" ToRole="gonderimadres" />
           <NavigationProperty Name="sepet" Relationship="websayfaModel.FK_sepet_musteri" FromRole="musteri" ToRole="sepet" />
-          <Property Name="musterisifre" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="musteritur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_faturaadres_musteri">
           <End Type="websayfaModel.musteri" Role="musteri" Multiplicity="0..1" />
@@ -749,7 +747,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -862,7 +860,6 @@
                 <ScalarProperty Name="musteritel" ColumnName="musteritel" />
                 <ScalarProperty Name="musteriemail" ColumnName="musteriemail" />
                 <ScalarProperty Name="musteriadi" ColumnName="musteriadi" />
-                <ScalarProperty Name="musterikullaniciadi" ColumnName="musterikullaniciadi" />
                 <ScalarProperty Name="musteriTc" ColumnName="musteriTc" />
                 <ScalarProperty Name="musteriid" ColumnName="musteriid" />
               </MappingFragment>

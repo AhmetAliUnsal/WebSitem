@@ -18,8 +18,7 @@ namespace WebSitem
         {
             WebSitem.Business.musteri nesne = new WebSitem.Business.musteri();
             WebSitem.DataAccess.musteri nesne1 = new WebSitem.DataAccess.musteri();
-           
-            
+        
             nesne1.musteriadi = kullaniciadsoyad.Text;
             nesne1.musteriTc = kullanicitcno.Text;
             nesne1.musteritel = kullanicitel.Text;

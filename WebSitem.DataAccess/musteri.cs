@@ -24,7 +24,6 @@ namespace WebSitem.DataAccess
     
         public int musteriid { get; set; }
         public string musteriTc { get; set; }
-        public string musterikullaniciadi { get; set; }
         public string musteriadi { get; set; }
         public string musteriemail { get; set; }
         public string musteritel { get; set; }

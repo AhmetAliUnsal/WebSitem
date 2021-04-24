@@ -327,7 +327,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         </div>
                         <div class="col-md-6">
                             <form action="#" method="post" runat="server">
-                             <div class="form-group">
+                                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                         <div class="form-group">
                                     <label for="recipient-name1" class="col-form-label">Adınız Soyadınız:</label>
                                      <asp:TextBox ID="kullaniciadsoyad" CssClass="form-control" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="Requiredadsoyad" runat="server" ControlToValidate="kullaniciadsoyad" ForeColor="Red" ErrorMessage="Bu bölüm boş bırakılamaz!"></asp:RequiredFieldValidator>
@@ -362,9 +365,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                               
                                 <div class="right-w3l">
                                     <asp:Button ID="kaydet" CssClass="form-control" runat="server" Text="Kaydet" OnClick="kaydet_Click"/>
-                                    <asp:Label ID="kayitsonuc" runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="kayitsonuc" runat="server" ForeColor="Red" BackColor="Yellow" Text=""></asp:Label>
                                 </div>
                                 
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            
                             </form>
                             <p class="text-center mt-3">Zaten Kayıtlımısınız?
                                 <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark login_btn">
@@ -419,6 +425,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
      <script>
          $(document).ready(function () {
              $("#myModal_btn").modal();
+
+             
          });
      </script>
     <!-- script for password match -->

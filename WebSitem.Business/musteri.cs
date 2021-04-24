@@ -34,7 +34,6 @@ namespace WebSitem.Business
             WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
             yeni.musteriadi = "deneme yanılma";
             yeni.musteriemail = "deneme@deneme.com";
-            yeni.musterikullaniciadi = "deneme";
             yeni.musteritel = "05555555555";
             yeni.musteriTc = "12345678901";
 
@@ -49,8 +48,7 @@ namespace WebSitem.Business
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
             WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
             yeni.musteriadi = nesne.musteriadi;
-            yeni.musteriemail = nesne.musteriemail;
-            yeni.musterikullaniciadi = nesne.musterikullaniciadi;
+            yeni.musteriemail = nesne.musteriemail;       
             yeni.musteritel = nesne.musteritel;
             yeni.musteriTc = nesne.musteriTc;
 
@@ -64,18 +62,35 @@ namespace WebSitem.Business
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
             WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
-            yeni.musteriadi = nesne.musteriadi;
-            yeni.musteriemail = nesne.musteriemail;
-            yeni.musteritel = nesne.musteritel;
-            yeni.musteriTc = nesne.musteriTc;
-            yeni.musterisifre = nesne.musterisifre;
-            yeni.musteritur = nesne.musteritur;
 
-            ekle.musteri.Add(yeni);
-            ekle.SaveChanges();
+            var ara = ekle.musteri.Where(p => p.musteriemail == nesne.musteriemail).FirstOrDefault();
+            var ara2 = ekle.musteri.Where(p => p.musteriTc == nesne.musteriTc).FirstOrDefault();
+           if(ara != null || ara2 != null)
+            {
 
-            var verilerigetir = Listele();
-            return "Başarıyla Eklenildi";
+                if (ara.musteriemail == nesne.musteriemail || ara2.musteriTc == nesne.musteriTc)
+                {
+                    return "Kaydınız Bulunmaktadır!!";
+                }
+
+                return "";
+            }
+            else
+            {
+                yeni.musteriadi = nesne.musteriadi;
+                yeni.musteriemail = nesne.musteriemail;
+                yeni.musteritel = nesne.musteritel;
+                yeni.musteriTc = nesne.musteriTc;
+                yeni.musterisifre = nesne.musterisifre;
+                yeni.musteritur = nesne.musteritur;
+
+                ekle.musteri.Add(yeni);
+                ekle.SaveChanges();
+
+                var verilerigetir = Listele();
+                return "Başarıyla Eklenildi";
+            }
+
         }
 
 
@@ -88,7 +103,6 @@ namespace WebSitem.Business
 
             aranan.musteriadi = nesne.musteriadi;
             aranan.musteriemail = nesne.musteriemail;
-            aranan.musterikullaniciadi = nesne.musterikullaniciadi;
             aranan.musteritel = nesne.musteritel;
             aranan.musteriTc = nesne.musteriTc;
 

@@ -29,7 +29,7 @@ namespace WebSitem
             WebSitem.DataAccess.musteri nesne1 = new WebSitem.DataAccess.musteri();
             //var değer = nesne.VeriEkleme();
 
-            nesne1.musterikullaniciadi = TextBox1.Text;
+            
             nesne1.musteriadi = TextBox2.Text;
             nesne1.musteriTc = TextBox3.Text;
             nesne1.musteritel =TextBox4.Text;
@@ -45,7 +45,7 @@ namespace WebSitem
             WebSitem.DataAccess.musteri nesne2 = new WebSitem.DataAccess.musteri();
             //var değer = nesne.VeriEkleme();
 
-            nesne2.musterikullaniciadi = TextBox1.Text;
+           
             nesne2.musteriadi = TextBox2.Text;  
             nesne2.musteritel = TextBox4.Text;
             nesne2.musteriTc = TextBox6.Text;
