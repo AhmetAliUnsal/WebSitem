@@ -11,34 +11,34 @@ namespace WebSitem
 {
 
 
-    public partial class Site
+    public partial class SifreSifirlama
     {
 
         /// <summary>
-        /// HeadAlan denetimi.
+        /// email denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadAlan;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// SayfaBaslik denetimi.
+        /// psw denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder SayfaBaslik;
+        protected global::System.Web.UI.WebControls.TextBox psw;
 
         /// <summary>
-        /// OrtaAlan denetimi.
+        /// Giris denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder OrtaAlan;
+        protected global::System.Web.UI.WebControls.Button Giris;
     }
 }

@@ -70,7 +70,7 @@ namespace WebSitem.Business
 
                 if (ara.musteriemail == nesne.musteriemail || ara2.musteriTc == nesne.musteriTc)
                 {
-                    return "Kaydınız Bulunmaktadır!!";
+                    return "Kaydınız Bulunmaktadır!!! Lütfen Sıfırlama İşlemi Yapınız!!!";
                 }
 
                 return "";
@@ -88,10 +88,39 @@ namespace WebSitem.Business
                 ekle.SaveChanges();
 
                 var verilerigetir = Listele();
-                return "Başarıyla Eklenildi";
+                return "Başarıyla Eklenildi.Lütfen Giriş Yapınız!!!";
             }
 
         }
+        public string MusteriSorgula(WebSitem.DataAccess.musteri nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
+
+            var ara = ekle.musteri.Where(p => p.musteriemail == nesne.musteriemail).FirstOrDefault();
+            if (ara != null)
+            {
+
+                if (ara.musterisifre == nesne.musterisifre)
+                {
+                    return "1";
+
+                }
+                else
+                {
+                    return "Giriş Yapılamadı!! Email Ya da Şifreniz Yanlış!!!";
+                }
+
+            }
+            else {
+                return "Bölümler Boş bırakılamaz!!";
+
+            }
+
+        }
+            
+            
+        
 
 
         public string VeriGüncelle(string musteriTc,WebSitem.DataAccess.musteri nesne)
