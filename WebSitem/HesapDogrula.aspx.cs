@@ -31,6 +31,7 @@ namespace WebSitem
                 Dogrulasonuc.Text = "Doğrulama Başarılı. Şifrenizi Değiştirebilirsiniz!";
                 System.Threading.Thread.Sleep(5000);
                 Session["musteritc"]=kullanicitcno.Text;
+                Session.Timeout = 2;
                 Response.Redirect("SifreSifirla.aspx");
             }
             else

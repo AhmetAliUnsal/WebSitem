@@ -11,6 +11,10 @@ namespace WebSitem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["musteritc"] == null)
+            {
+                Response.Redirect("HesapDogrula.aspx");
+            }
            
         }
 
@@ -28,6 +32,7 @@ namespace WebSitem
             {
                 GuncellemeSonuc.Text = "Şifre Güncellemesi Başarılı. Lütfen Tekrar Giriş Yapınız!";
                 System.Threading.Thread.Sleep(5000);
+                Session.Abandon();
                 Response.Redirect("Login.aspx");
             }
             else
