@@ -6,7 +6,8 @@
 <head runat="server">
  <meta charset='utf-8'>
    <meta name='viewport' content='width=device-width, initial-scale=1'>
-   <title>Snippet - BBBootstrap</title>
+   <title>Kayıt</title>
+    <link rel="icon" href="template/img/core-img/favicon.ico">
    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
     <style>
@@ -273,7 +274,7 @@ a:hover {
              document.getElementById("kullanicisifre2").setCustomValidity("Şifreleriniz eşleşmiyor");
         else
              document.getElementById("kullanicisifre2").setCustomValidity('');
-            //empty string means no validation error
+            
         }
         function TcDogrula() {
         var tcno = document.getElementById("kullanicitcno").value;

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SifreSifirlama.aspx.cs" Inherits="WebSitem.SifreSifirlama" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HesapDogrula.aspx.cs" Inherits="WebSitem.SifreSifirlama" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,8 @@
 <head runat="server">
  <meta charset='utf-8'>
    <meta name='viewport' content='width=device-width, initial-scale=1'>
-   <title>Snippet - BBBootstrap</title>
+   <title>Şifre Sıfırla</title>
+    <link rel="icon" href="template/img/core-img/favicon.ico">
    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
     <style>
@@ -185,29 +186,52 @@ a:hover {
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
                         <form runat="server">
-                        <div class="row justify-content-center px-3 mb-3"> 
-                            <a href="Default.aspx"><img id="logo" src="template/img/core-img/leaf.png"></a> 
-                        </div>
-                        <a href="Default.aspx"><h3 class="mb-5 text-center heading">ALAZEA</h3></a>
-                        <h6 class="msg-info">Lütfen Kayıtlı Olan Hesabınızla Gririş Yapınız</h6>
-                        
-                        <div class="form-group"> 
-                            <label class="form-control-label text-muted">E-mailiniz:</label> 
-                            <asp:TextBox ID="email" CssClass="form-control" name="email" runat="server"></asp:TextBox>
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <div class="row justify-content-center px-3 mb-3"> 
+                                    <a href="Default.aspx"><img id="logo" src="template/img/core-img/leaf.png"></a> 
+                                </div>
+                                <a href="Default.aspx"><h3 class="mb-5 text-center heading">ALAZEA</h3></a>
+                                <h6 class="msg-info">Lütfen Hesabınızı Doğrulayınız!!!</h6>
+                                <div id="gizle" class="form-group">
+                                    <div class="form-group"> 
+                                        <label class="form-control-label text-muted">E-mailiniz:</label> 
+                                        <asp:TextBox ID="kullanicimail" CssClass="form-control" name="kullanicimail" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="Requiredkullanimail" runat="server" ControlToValidate="kullanicimail" ForeColor="Red" ErrorMessage="Bu bölüm boş bırakılamaz!"></asp:RequiredFieldValidator><br />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionmail" runat="server" ControlToValidate="kullanicimail" ForeColor="Red" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Girilen Eposta geçersiz"></asp:RegularExpressionValidator>
                             
-                        </div>
+                                    </div>
 
-                        <div class="form-group"> 
-                            <label class="form-control-label text-muted">Şifreniz:</label> 
-                            <asp:TextBox ID="psw" name="psw" CssClass="form-control" runat="server"></asp:TextBox>
-                        </div>
-
-                        <div class="row justify-content-center my-3 px-3"> 
-                            <asp:Button ID="Giris" CssClass="btn-block btn-color" runat="server" ForeColor="White" Text="Giris" OnClick="Giris_Click" />
-                        </div>
-                        <div class="row justify-content-center my-2"> 
-                            <a href="SifreSifirlama.aspx"><small class="text-muted">Şifrenizi Mi Unuttunuz?</small></a> 
-                        </div>
+                                    <div class="form-group"> 
+                                        <label class="form-control-label text-muted">Tc Kimlik Numaranız:</label> 
+                                        <asp:TextBox ID="kullanicitcno" CssClass="form-control" MaxLength="11"  runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredTcNo" ControlToValidate="kullanicitcno" ForeColor="Red" runat="server" ErrorMessage="Bu bölüm boş bırakılamaz!"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group"> 
+                                        <label class="form-control-label text-muted">Telefon Numaranız:</label> 
+                                        <asp:TextBox ID="kullanicitel" CssClass="form-control" MaxLength="11" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="Requiredkullanicitel" runat="server" ControlToValidate="kullanicitel" ForeColor="Red" ErrorMessage="Bu bölüm boş bırakılamaz!"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="row justify-content-center my-3 px-3"> 
+                                        <asp:Button ID="Dogrula" CssClass="btn-block btn-color" runat="server" ForeColor="White" Text="Doğrula" OnClick="Dogrula_Click"/>
+                                        <asp:Label ID="Dogrulasonuc" runat="server" ForeColor="Red" BackColor="Yellow" Text=""></asp:Label>
+                                    </div>
+                                </div>
+                               
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                                 
+                                <div class="row justify-content-center my-2"> 
+                                    <a href="Login.aspx"><small class="text-muted">Giriş Yapmak Mı İstiyorsunuz?</small></a> 
+                                </div>
+                            </ContentTemplate>
+                         </asp:UpdatePanel>        
+                                
+                         
+                        
                         </form>
                     </div>
                 </div>
@@ -226,5 +250,24 @@ a:hover {
         </div>
     </div>
 </div>
-                            </body>
+   
+    <script>
+        function TcDogrula() {
+            var tcno = document.getElementById("kullanicitcno").value;
+            var toplam;
+            toplam = Number(tcno.substring(0, 1)) + Number(tcno.substring(1, 2)) +
+                Number(tcno.substring(2, 3)) + Number(tcno.substring(3, 4)) +
+                Number(tcno.substring(4, 5)) + Number(tcno.substring(5, 6)) +
+                Number(tcno.substring(6, 7)) + Number(tcno.substring(7, 8)) +
+                Number(tcno.substring(8, 9)) + Number(tcno.substring(9, 10));
+            strtoplam = String(toplam); onunbirlerbas = strtoplam.substring(strtoplam.length, strtoplam.length - 1);
+
+            if (onunbirlerbas == tcno.substring(10, 11)) {
+                document.getElementById("kullanicitcno").setCustomValidity('');
+            } else {
+                document.getElementById("kullanicitcno").setCustomValidity("TC numarası doğru değil!");
+            }
+        }
+    </script>
+</body>
 </html>

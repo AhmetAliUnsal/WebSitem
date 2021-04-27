@@ -26,9 +26,18 @@ namespace WebSitem
             nesne1.musterisifre = kullanicisifre1.Text;
             nesne1.musteritur = "kullanici";
             var değer = nesne.MusteriEkle(nesne1);
-
-            TextboxTemizle(this);
-            kayitsonuc.Text = değer;
+            if (değer == "1")
+            {
+                TextboxTemizle(this);
+                kayitsonuc.Text = "Başarıyla Eklenildi.Lütfen Giriş Yapınız!!!";
+                System.Threading.Thread.Sleep(5000);
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                kayitsonuc.Text = değer;
+            }
+            
         }
 
         public void TextboxTemizle(Control parent)

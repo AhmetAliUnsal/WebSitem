@@ -77,7 +77,8 @@
     <Content Include="Kayit.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Portföyümüz.aspx" />
-    <Content Include="SifreSifirlama.aspx" />
+    <Content Include="SifreSifirla.aspx" />
+    <Content Include="HesapDogrula.aspx" />
     <Content Include="template\about.html" />
     <Content Include="template\blog.html" />
     <Content Include="template\cart.html" />
@@ -225,12 +226,19 @@
       <DependentUpon>Portföyümüz.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SifreSifirlama.aspx.cs">
-      <DependentUpon>SifreSifirlama.aspx</DependentUpon>
+    <Compile Include="SifreSifirla.aspx.cs">
+      <DependentUpon>SifreSifirla.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SifreSifirlama.aspx.designer.cs">
-      <DependentUpon>SifreSifirlama.aspx</DependentUpon>
+    <Compile Include="SifreSifirla.aspx.designer.cs">
+      <DependentUpon>SifreSifirla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HesapDogrula.aspx.cs">
+      <DependentUpon>HesapDogrula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HesapDogrula.aspx.designer.cs">
+      <DependentUpon>HesapDogrula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

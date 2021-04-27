@@ -26,7 +26,7 @@ namespace WebSitem
             {
                 TextboxTemizle(this);
                 sonuc.Text = değer;
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(5000);
                 Response.Redirect("Default.aspx");
             }
             else

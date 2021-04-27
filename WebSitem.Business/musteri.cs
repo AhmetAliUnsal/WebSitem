@@ -88,7 +88,7 @@ namespace WebSitem.Business
                 ekle.SaveChanges();
 
                 var verilerigetir = Listele();
-                return "Başarıyla Eklenildi.Lütfen Giriş Yapınız!!!";
+                return "1";
             }
 
         }
@@ -118,10 +118,65 @@ namespace WebSitem.Business
             }
 
         }
-            
-            
-        
 
+        public string MusteriDogrula(WebSitem.DataAccess.musteri nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
+
+            var dogrula = ekle.musteri.Where(p => p.musteriemail == nesne.musteriemail).FirstOrDefault();
+            
+            if (dogrula != null)
+            {
+
+                if (dogrula.musteriemail == nesne.musteriemail && dogrula.musteriTc==nesne.musteriTc && dogrula.musteritel == nesne.musteritel)
+                {
+                    return "1";
+
+                }
+                else
+                {
+                    return "Doğrulama Başarısız!! Girilen Bilgilerde Yanlışlık Var!!!";
+                }
+
+            }
+            else
+            {
+                return "Doğrulama Başarısız!! Girilen Bilgilerde Yanlışlık Var!!";
+
+            }
+
+        }
+
+        public String MusteriSifreGuncelle(WebSitem.DataAccess.musteri nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
+            
+            var guncelle = ekle.musteri.Where(p => p.musteriTc == nesne.musteriTc).FirstOrDefault();
+            if (guncelle != null)
+            {
+
+                if (guncelle.musteriTc == nesne.musteriTc)
+                {
+                    guncelle.musterisifre = nesne.musterisifre;
+                    ekle.SaveChanges();
+                    return "1";
+
+                }
+                else
+                {
+                    return "Güncelleme Başarısız!! Girilen Bilgilerde Yanlışlık Var!!!";
+                }
+
+            }
+            else
+            {
+                return " Girilen Bilgilerde Yanlışlık Var!!";
+
+            }
+
+        }
 
         public string VeriGüncelle(string musteriTc,WebSitem.DataAccess.musteri nesne)
         {
