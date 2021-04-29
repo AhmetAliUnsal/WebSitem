@@ -4,4 +4,4 @@
 
 ### Web Tabanlı Programlama Dersi için hazırlanan web sitesi
 
-# C# Web Form kullanılacak 
+# Asp.Net Web Form kullanılacak 
