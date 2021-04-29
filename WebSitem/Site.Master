@@ -90,7 +90,7 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="template/index.html" class="nav-brand"><img src="template/img/core-img/logo.png" alt=""></a>
+                        <a href="Default.aspx" class="nav-brand"><img src="template/img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -108,11 +108,11 @@
                             <!-- Navbar Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="template/index.html">Anasayfa</a></li>
+                                    <li><a href="Default.aspx">Anasayfa</a></li>
                                     <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
                                     <li><a href="#">Sayfalar</a>
                                         <ul class="dropdown">
-                                            <li><a href="template/index.html">Anasayfa</a></li>
+                                            <li><a href="Default.aspx">Anasayfa</a></li>
                                             <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
                                             <li><a href="template/shop.html">Alışveriş</a>
                                                 <ul class="dropdown">
@@ -123,10 +123,6 @@
                                                 </ul>
                                             </li>
                                             <li><a href="Portföyümüz.aspx">Portföy</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="Portföyümüz.aspx">Portföy</a></li>
-                                                    <li><a href="template/single-portfolio.html">Portföy Detay</a></li>
-                                                </ul>
                                             </li>
                                             <li><a href="template/blog.html">Yazılar</a>
                                                 <ul class="dropdown">

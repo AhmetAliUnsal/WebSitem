@@ -165,6 +165,53 @@
     <Content Include="template\img\core-img\s1.png" />
     <Content Include="template\img\core-img\s2.png" />
     <Content Include="template\img\core-img\s3.png" />
+    <Content Include="template\img\fidanlar\ahududufidanı.jpg" />
+    <Content Include="template\img\fidanlar\ananasfidanı.jpg" />
+    <Content Include="template\img\fidanlar\AntoryumSaksıÇiçeği.jpg" />
+    <Content Include="template\img\fidanlar\armutfidanı.jpg" />
+    <Content Include="template\img\fidanlar\avakadofidanı.jpg" />
+    <Content Include="template\img\fidanlar\ayvafidanı.jpg" />
+    <Content Include="template\img\fidanlar\AçelyaSaksıÇiçeği.jpg" />
+    <Content Include="template\img\fidanlar\böğürtlen.jpg" />
+    <Content Include="template\img\fidanlar\cevizfidanı.jpg" />
+    <Content Include="template\img\fidanlar\elmafidanı.jpg" />
+    <Content Include="template\img\fidanlar\erikfidanı.jpg" />
+    <Content Include="template\img\fidanlar\frenküzümü.jpg" />
+    <Content Include="template\img\fidanlar\GuzmaniaSaksıÇiçeği.jpg" />
+    <Content Include="template\img\fidanlar\gürgenfidanı.jpg" />
+    <Content Include="template\img\fidanlar\karaservifidanı.jpg" />
+    <Content Include="template\img\fidanlar\karaçamfidanı.jpg" />
+    <Content Include="template\img\fidanlar\kayısıfidanı.jpg" />
+    <Content Include="template\img\fidanlar\kirazfidanı.jpg" />
+    <Content Include="template\img\fidanlar\kivifidanı.jpg" />
+    <Content Include="template\img\fidanlar\kiwano.jpg" />
+    <Content Include="template\img\fidanlar\kumkatfidanı.jpg" />
+    <Content Include="template\img\fidanlar\leylakçiçeği.jpg" />
+    <Content Include="template\img\fidanlar\leylandifidanı.jpg" />
+    <Content Include="template\img\fidanlar\limonfidanı.jpg" />
+    <Content Include="template\img\fidanlar\mandalinafidanı.jpg" />
+    <Content Include="template\img\fidanlar\mangofidanı.jpg" />
+    <Content Include="template\img\fidanlar\maviladinfidanı.jpg" />
+    <Content Include="template\img\fidanlar\narfidanı.jpg" />
+    <Content Include="template\img\fidanlar\nektari.jpg" />
+    <Content Include="template\img\fidanlar\OrtancaSaksıÇiçeği.jpg" />
+    <Content Include="template\img\fidanlar\pitayafidanı.jpg" />
+    <Content Include="template\img\fidanlar\pomelofidanı.jpg" />
+    <Content Include="template\img\fidanlar\portakalfidanı.jpg" />
+    <Content Include="template\img\fidanlar\rambutan.jpg" />
+    <Content Include="template\img\fidanlar\SardunyaSaksıÇiçeği.jpg" />
+    <Content Include="template\img\fidanlar\sarıçamfidanı.jpg" />
+    <Content Include="template\img\fidanlar\sedir.jpg" />
+    <Content Include="template\img\fidanlar\starapplefidanı.jpg" />
+    <Content Include="template\img\fidanlar\söğütfidanı.jpg" />
+    <Content Include="template\img\fidanlar\Trabzonhurması.jpg" />
+    <Content Include="template\img\fidanlar\vişnefidanı.jpg" />
+    <Content Include="template\img\fidanlar\YelkenÇiçeği.jpg" />
+    <Content Include="template\img\fidanlar\yenidünya.jpg" />
+    <Content Include="template\img\fidanlar\zeytinfidanı.jpeg" />
+    <Content Include="template\img\fidanlar\çınarfidanı.jpg" />
+    <Content Include="template\img\fidanlar\üzümfidanı.jpg" />
+    <Content Include="template\img\fidanlar\şeftalifidanı.jpg" />
     <Content Include="template\index.html" />
     <Content Include="template\js\active.js" />
     <Content Include="template\js\bootstrap\bootstrap.min.js" />
@@ -300,6 +347,7 @@
     <Content Include="template\scss\_theme_color.scss" />
     <Content Include="template\style.css.map" />
     <Content Include="Site.Master" />
+    <Content Include="template\img\fidanlar\mandevillaçiçeği.webp" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -317,6 +365,7 @@
       <Name>WebSitem.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

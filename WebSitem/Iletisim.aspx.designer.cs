@@ -13,14 +13,5 @@ namespace WebSitem
 
     public partial class Iletisim
     {
-
-        /// <summary>
-        /// SqlDataSource1 denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }
