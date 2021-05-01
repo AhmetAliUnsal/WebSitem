@@ -21,6 +21,9 @@
           <Property Name="ilfkid" Type="int" />
           <Property Name="ilcefkid" Type="int" />
           <Property Name="faturaadres" Type="varchar" MaxLength="300" />
+          <Property Name="faturakad" Type="varchar" MaxLength="100" />
+          <Property Name="faturasoyad" Type="varchar" MaxLength="100" />
+          <Property Name="faturatel" Type="varchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="gonderimadres">
           <Key>
@@ -31,6 +34,9 @@
           <Property Name="ilfkid" Type="int" />
           <Property Name="ilcefkid" Type="int" />
           <Property Name="gonderimadres" Type="varchar" MaxLength="300" />
+          <Property Name="alıcıadı" Type="varchar" MaxLength="100" />
+          <Property Name="alıcısoyadı" Type="varchar" MaxLength="100" />
+          <Property Name="alıcıtelefon" Type="varchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="il">
           <Key>
@@ -384,6 +390,9 @@
           <NavigationProperty Name="ilce" Relationship="Self.FK_faturaadres_ilce" FromRole="faturaadres" ToRole="ilce" />
           <NavigationProperty Name="sepet" Relationship="Self.FK_sepet_faturaadres" FromRole="faturaadres" ToRole="sepet" />
           <NavigationProperty Name="musteri" Relationship="websayfaModel.FK_faturaadres_musteri" FromRole="faturaadres" ToRole="musteri" />
+          <Property Name="faturakad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="faturasoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="faturatel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="gonderimadres">
           <Key>
@@ -398,6 +407,9 @@
           <NavigationProperty Name="ilce" Relationship="Self.FK_gonderimadres_ilce1" FromRole="gonderimadres" ToRole="ilce" />
           <NavigationProperty Name="sepet" Relationship="Self.FK_sepet_gonderimadres" FromRole="gonderimadres" ToRole="sepet" />
           <NavigationProperty Name="musteri" Relationship="websayfaModel.FK_gonderimadres_musteri" FromRole="gonderimadres" ToRole="musteri" />
+          <Property Name="alıcıadı" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="alıcısoyadı" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="alıcıtelefon" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="il">
           <Key>
@@ -764,6 +776,9 @@
           <EntitySetMapping Name="faturaadres">
             <EntityTypeMapping TypeName="websayfaModel.faturaadres">
               <MappingFragment StoreEntitySet="faturaadres">
+                <ScalarProperty Name="faturatel" ColumnName="faturatel" />
+                <ScalarProperty Name="faturasoyad" ColumnName="faturasoyad" />
+                <ScalarProperty Name="faturakad" ColumnName="faturakad" />
                 <ScalarProperty Name="faturaadresid" ColumnName="faturaadresid" />
                 <ScalarProperty Name="musterifkid" ColumnName="musterifkid" />
                 <ScalarProperty Name="ilfkid" ColumnName="ilfkid" />
@@ -775,6 +790,9 @@
           <EntitySetMapping Name="gonderimadres">
             <EntityTypeMapping TypeName="websayfaModel.gonderimadres">
               <MappingFragment StoreEntitySet="gonderimadres">
+                <ScalarProperty Name="alıcıtelefon" ColumnName="alıcıtelefon" />
+                <ScalarProperty Name="alıcısoyadı" ColumnName="alıcısoyadı" />
+                <ScalarProperty Name="alıcıadı" ColumnName="alıcıadı" />
                 <ScalarProperty Name="gonderimadresid" ColumnName="gonderimadresid" />
                 <ScalarProperty Name="musterifkid" ColumnName="musterifkid" />
                 <ScalarProperty Name="ilfkid" ColumnName="ilfkid" />

@@ -26,7 +26,9 @@ namespace WebSitem
             {
                 TextboxTemizle(this);
                 sonuc.Text = değer;
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(50);
+                Session["mail"]=email.Text;
+                Session.Timeout = 30;
                 Response.Redirect("Default.aspx");
             }
             else

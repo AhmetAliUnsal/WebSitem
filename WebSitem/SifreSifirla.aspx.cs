@@ -31,7 +31,7 @@ namespace WebSitem
             if (değer == "1")
             {
                 GuncellemeSonuc.Text = "Şifre Güncellemesi Başarılı. Lütfen Tekrar Giriş Yapınız!";
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(500);
                 Session.Abandon();
                 Response.Redirect("Login.aspx");
             }

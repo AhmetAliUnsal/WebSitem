@@ -25,6 +25,9 @@ namespace WebSitem.DataAccess
         public Nullable<int> ilfkid { get; set; }
         public Nullable<int> ilcefkid { get; set; }
         public string gonderimadres1 { get; set; }
+        public string alıcıadı { get; set; }
+        public string alıcısoyadı { get; set; }
+        public string alıcıtelefon { get; set; }
     
         public virtual il il { get; set; }
         public virtual ilce ilce { get; set; }

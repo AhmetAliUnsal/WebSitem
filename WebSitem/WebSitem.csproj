@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="FaturaAdres.aspx" />
+    <Content Include="GonderimAdres.aspx" />
     <Content Include="Hakkımızda.aspx" />
     <Content Include="Iletisim.aspx" />
     <Content Include="Kayit.aspx" />
@@ -236,6 +238,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FaturaAdres.aspx.cs">
+      <DependentUpon>FaturaAdres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FaturaAdres.aspx.designer.cs">
+      <DependentUpon>FaturaAdres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GonderimAdres.aspx.cs">
+      <DependentUpon>GonderimAdres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GonderimAdres.aspx.designer.cs">
+      <DependentUpon>GonderimAdres.aspx</DependentUpon>
     </Compile>
     <Compile Include="Hakkımızda.aspx.cs">
       <DependentUpon>Hakkımızda.aspx</DependentUpon>

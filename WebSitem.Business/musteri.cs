@@ -92,6 +92,13 @@ namespace WebSitem.Business
             }
 
         }
+
+        public string MusteriIdSorgula(string a)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            var sonuc=ekle.musteri.Where(p => p.musteriemail == a).FirstOrDefault();
+            return sonuc.musteriid.ToString();
+        }
         public string MusteriSorgula(WebSitem.DataAccess.musteri nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();

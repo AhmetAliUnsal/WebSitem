@@ -29,7 +29,7 @@ namespace WebSitem
             if (değer == "1")
             {
                 Dogrulasonuc.Text = "Doğrulama Başarılı. Şifrenizi Değiştirebilirsiniz!";
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(50);
                 Session["musteritc"]=kullanicitcno.Text;
                 Session.Timeout = 2;
                 Response.Redirect("SifreSifirla.aspx");
