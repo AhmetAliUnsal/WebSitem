@@ -77,7 +77,8 @@
                                             </div>
                                     </div>
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="Button1" CssClass="btn alazea-btn w-100 btn-primary" runat="server" Text="Kaydet" />
+                                        <asp:Label ID="FaturaEkleSonuc" runat="server" Text=""></asp:Label>
+                                        <asp:Button ID="Button1" CssClass="btn alazea-btn w-100 btn-primary" OnClick="Button1_Click" runat="server" Text="Kaydet" />
                                     </div>
                                 </div>
                             </div>

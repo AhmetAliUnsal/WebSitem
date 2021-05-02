@@ -11,7 +11,7 @@ namespace WebSitem
 {
 
 
-    public partial class FaturaAdres
+    public partial class UrunEkle
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace WebSitem
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// first_name denetimi.
+        /// urun_ad denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox first_name;
+        protected global::System.Web.UI.WebControls.TextBox urun_ad;
 
         /// <summary>
         /// RequiredFieldValidatorad denetimi.
@@ -51,13 +51,13 @@ namespace WebSitem
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorad;
 
         /// <summary>
-        /// last_name denetimi.
+        /// urun_stok denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox last_name;
+        protected global::System.Web.UI.WebControls.TextBox urun_stok;
 
         /// <summary>
         /// RequiredFieldValidatorsoyad denetimi.
@@ -69,13 +69,13 @@ namespace WebSitem
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorsoyad;
 
         /// <summary>
-        /// phone_number denetimi.
+        /// urun_fiyat denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox phone_number;
+        protected global::System.Web.UI.WebControls.TextBox urun_fiyat;
 
         /// <summary>
         /// RequiredFieldValidatortel denetimi.
@@ -87,49 +87,31 @@ namespace WebSitem
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatortel;
 
         /// <summary>
-        /// dropdownil denetimi.
+        /// dropdownkategori denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdownil;
+        protected global::System.Web.UI.WebControls.DropDownList dropdownkategori;
 
         /// <summary>
-        /// dropdownilce denetimi.
+        /// dropdowndurum denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdownilce;
+        protected global::System.Web.UI.WebControls.DropDownList dropdowndurum;
 
         /// <summary>
-        /// address denetimi.
+        /// EklemeSonuc denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address;
-
-        /// <summary>
-        /// RequiredFieldValidatoradres denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoradres;
-
-        /// <summary>
-        /// FaturaEkleSonuc denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FaturaEkleSonuc;
+        protected global::System.Web.UI.WebControls.Label EklemeSonuc;
 
         /// <summary>
         /// Button1 denetimi.

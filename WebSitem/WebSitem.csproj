@@ -228,6 +228,7 @@
     <Content Include="template\single-portfolio.html" />
     <Content Include="template\single-post.html" />
     <Content Include="template\style.css" />
+    <Content Include="UrunEkle.aspx" />
     <Content Include="veri tabanı deneme.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -309,6 +310,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UrunEkle.aspx.cs">
+      <DependentUpon>UrunEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UrunEkle.aspx.designer.cs">
+      <DependentUpon>UrunEkle.aspx</DependentUpon>
     </Compile>
     <Compile Include="veri tabanı deneme.aspx.cs">
       <DependentUpon>veri tabanı deneme.aspx</DependentUpon>

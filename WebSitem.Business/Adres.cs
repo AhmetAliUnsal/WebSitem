@@ -56,5 +56,23 @@ namespace WebSitem.Business
             ekle.SaveChanges();
             return "1";
         }
+
+        public string FaturaAdresEkle(WebSitem.DataAccess.faturaadres nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.faturaadres yeni = new DataAccess.faturaadres();
+
+            var ara = ekle.gonderimadres.Where(p => p.musterifkid == nesne.musterifkid).FirstOrDefault();
+            yeni.musterifkid = nesne.musterifkid;
+            yeni.ilfkid = nesne.ilfkid;
+            yeni.ilcefkid = nesne.ilcefkid;
+            yeni.faturaadres1 = nesne.faturaadres1;
+            yeni.faturakad = nesne.faturakad;
+            yeni.faturasoyad = nesne.faturasoyad;
+            yeni.faturatel = nesne.faturatel;
+            ekle.faturaadres.Add(yeni);
+            ekle.SaveChanges();
+            return "1";
+        }
     }
 }
