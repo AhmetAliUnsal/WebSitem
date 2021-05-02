@@ -77,6 +77,7 @@
     <Content Include="GonderimAdres.aspx" />
     <Content Include="Hakkımızda.aspx" />
     <Content Include="Iletisim.aspx" />
+    <Content Include="Kategoriİslemleri.aspx" />
     <Content Include="Kayit.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Portföyümüz.aspx" />
@@ -275,6 +276,13 @@
     </Compile>
     <Compile Include="Iletisim.aspx.designer.cs">
       <DependentUpon>Iletisim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kategoriİslemleri.aspx.cs">
+      <DependentUpon>Kategoriİslemleri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kategoriİslemleri.aspx.designer.cs">
+      <DependentUpon>Kategoriİslemleri.aspx</DependentUpon>
     </Compile>
     <Compile Include="Kayit.aspx.cs">
       <DependentUpon>Kayit.aspx</DependentUpon>

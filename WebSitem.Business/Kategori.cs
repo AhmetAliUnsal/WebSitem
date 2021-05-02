@@ -23,13 +23,24 @@ namespace WebSitem.Business
             return kategoriid.kategoriid.ToString();
            
         }
-        public string KategoriEkle()
+        public string KategoriEkle(WebSitem.DataAccess.kategori nesne)
         {
-            return null;
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.kategori yeni = new DataAccess.kategori();
+            yeni.kategoriad = nesne.kategoriad;
+            ekle.kategori.Add(yeni);
+            ekle.SaveChanges();
+            return "1";
         }
-        public string KategoriSil()
+        public string KategoriSil(string a)
         {
-            return null;
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+
+            var ara = ekle.kategori.Where(p => p.kategoriad == a).FirstOrDefault();
+            ekle.kategori.Remove(ara);
+            ekle.SaveChanges();
+
+            return "1";
         }
         public string KategoriGuncelle()
         {
