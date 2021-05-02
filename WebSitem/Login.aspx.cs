@@ -20,14 +20,16 @@ namespace WebSitem
             WebSitem.DataAccess.musteri nesne1 = new WebSitem.DataAccess.musteri();
             nesne1.musteriemail = email.Text;
             nesne1.musterisifre = psw.Text;
-
+            var tur = nesne.MusteriKullaniciTur(email.Text);
             var değer = nesne.MusteriSorgula(nesne1);
             if (değer == "1")
             {
                 TextboxTemizle(this);
                 sonuc.Text = değer;
                 System.Threading.Thread.Sleep(50);
+                Session["kullanici"] = tur;
                 Session["mail"]=email.Text;
+                
                 Session.Timeout = 30;
                 Response.Redirect("Default.aspx");
             }

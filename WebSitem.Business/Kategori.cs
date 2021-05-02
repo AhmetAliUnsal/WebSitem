@@ -7,11 +7,21 @@ using System.Data.SqlClient;
 
 namespace WebSitem.Business
 {
-    class Kategori
+    public class Kategori
     {
-        public string KategoriGetir()
+        public List<WebSitem.DataAccess.kategori> KategoriGetir()
         {
-            return null;
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            var Kategoriler = ent.kategori.OrderBy(p => p.kategoriid).ToList();
+            return Kategoriler;
+        }
+        public string KategoriidBul(string a)
+        {
+            WebSitem.DataAccess.websayfaEntities ent2 = new DataAccess.websayfaEntities();
+            var kategoriid = ent2.kategori.Where(p => p.kategoriad == a).FirstOrDefault();
+
+            return kategoriid.kategoriid.ToString();
+           
         }
         public string KategoriEkle()
         {

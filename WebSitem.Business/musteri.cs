@@ -99,6 +99,14 @@ namespace WebSitem.Business
             var sonuc=ekle.musteri.Where(p => p.musteriemail == a).FirstOrDefault();
             return sonuc.musteriid.ToString();
         }
+
+        public string MusteriKullaniciTur(string a)
+        {
+            WebSitem.DataAccess.websayfaEntities sorgula = new DataAccess.websayfaEntities();
+            var sonuc = sorgula.musteri.Where(p => p.musteriemail == a).FirstOrDefault();
+            return sonuc.musteritur;
+
+        }
         public string MusteriSorgula(WebSitem.DataAccess.musteri nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();

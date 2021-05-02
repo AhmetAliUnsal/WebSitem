@@ -111,6 +111,7 @@
           <Property Name="urunstok" Type="int" />
           <Property Name="urunbirimfiyat" Type="int" />
           <Property Name="durumfkid" Type="int" />
+          <Property Name="urunresimadres" Type="varchar" MaxLength="300" />
         </EntityType>
         <Association Name="FK_faturaadres_il">
           <End Role="il" Type="Self.il" Multiplicity="0..1" />
@@ -490,6 +491,7 @@
           <NavigationProperty Name="durum" Relationship="Self.FK_urun_durum" FromRole="urun" ToRole="durum" />
           <NavigationProperty Name="kategori" Relationship="Self.FK_urun_kategori" FromRole="urun" ToRole="kategori" />
           <NavigationProperty Name="sepet" Relationship="Self.FK_sepet_urun" FromRole="urun" ToRole="sepet" />
+          <Property Name="urunresimadres" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_urun_durum">
           <End Role="durum" Type="Self.durum" Multiplicity="0..1" />
@@ -861,6 +863,7 @@
           <EntitySetMapping Name="urun">
             <EntityTypeMapping TypeName="websayfaModel.urun">
               <MappingFragment StoreEntitySet="urun">
+                <ScalarProperty Name="urunresimadres" ColumnName="urunresimadres" />
                 <ScalarProperty Name="urunid" ColumnName="urunid" />
                 <ScalarProperty Name="urunadi" ColumnName="urunadi" />
                 <ScalarProperty Name="urunkategorifkid" ColumnName="urunkategorifkid" />

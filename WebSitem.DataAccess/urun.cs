@@ -26,6 +26,7 @@ namespace WebSitem.DataAccess
         public Nullable<int> urunstok { get; set; }
         public Nullable<int> urunbirimfiyat { get; set; }
         public Nullable<int> durumfkid { get; set; }
+        public string urunresimadres { get; set; }
     
         public virtual durum durum { get; set; }
         public virtual kategori kategori { get; set; }
