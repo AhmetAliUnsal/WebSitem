@@ -80,7 +80,10 @@
     <Content Include="Kategoriİslemleri.aspx" />
     <Content Include="Kayit.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Magaza.aspx" />
     <Content Include="Portföyümüz.aspx" />
+    <Content Include="Sepet.aspx" />
+    <Content Include="sepet2.aspx" />
     <Content Include="SifreSifirla.aspx" />
     <Content Include="HesapDogrula.aspx" />
     <Content Include="template\about.html" />
@@ -222,7 +225,8 @@
     <Content Include="template\js\bootstrap\popper.min.js" />
     <Content Include="template\js\dil.js" />
     <Content Include="template\js\jquery\jquery-2.2.4.min.js" />
-    <Content Include="template\js\jquery\InputMask.js" />
+    <Content Include="template\js\jquery\jquery.mycart.js" />
+    <Content Include="template\js\jquery\jquery.mycart.min.js" />
     <Content Include="template\js\plugins\plugins.js" />
     <Content Include="template\portfolio.html" />
     <Content Include="template\shop-details.html" />
@@ -298,6 +302,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Magaza.aspx.cs">
+      <DependentUpon>Magaza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Magaza.aspx.designer.cs">
+      <DependentUpon>Magaza.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portföyümüz.aspx.cs">
       <DependentUpon>Portföyümüz.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -306,6 +317,20 @@
       <DependentUpon>Portföyümüz.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sepet.aspx.cs">
+      <DependentUpon>Sepet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sepet.aspx.designer.cs">
+      <DependentUpon>Sepet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sepet2.aspx.cs">
+      <DependentUpon>sepet2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sepet2.aspx.designer.cs">
+      <DependentUpon>sepet2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SifreSifirla.aspx.cs">
       <DependentUpon>SifreSifirla.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -388,6 +413,7 @@
     <Content Include="template\style.css.map" />
     <Content Include="Site.Master" />
     <Content Include="template\img\fidanlar\mandevillaçiçeği.webp" />
+    <Content Include="template\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
