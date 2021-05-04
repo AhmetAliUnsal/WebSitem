@@ -27,27 +27,7 @@
                 <!-- Shop Sorting Data -->
                 <div class="col-12">
                     <div class="shop-sorting-data d-flex flex-wrap align-items-center justify-content-between">
-                        <!-- Shop Page Count -->
-                        <div class="shop-page-count">
-                            <p>Showing 1–9 of 72 results</p>
-                        </div>
-                        <!-- Search by Terms -->
-                        <div class="search_by_terms">
-                            <form action="#" method="post" class="form-inline">
-                                <select class="custom-select widget-title">
-                                  <option selected>Short by Popularity</option>
-                                  <option value="1">Short by Newest</option>
-                                  <option value="2">Short by Sales</option>
-                                  <option value="3">Short by Ratings</option>
-                                </select>
-                                <select class="custom-select widget-title">
-                                  <option selected>Show: 9</option>
-                                  <option value="1">12</option>
-                                  <option value="2">18</option>
-                                  <option value="3">24</option>
-                                </select>
-                            </form>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -68,7 +48,8 @@
                                         <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
                                     </div>
                                     <div class="range-price">Fiyat: 10 TL - 500 TL</div>
-                                    <asp:Button id="fiyatsırala" runat="server" CssClass="btn-danger align-items-center alazea-btn" Text="Sırala"  />
+                                    <br />
+                                    <asp:Button id="fiyatsırala" runat="server" CssClass="btn-danger align-items-center alazea-btn" OnClick="fiyatsırala_Click" Text="Sırala"  />
                                 </div>
                             </div>
                         </div>
@@ -79,30 +60,32 @@
                             <div class="widget-desc">
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Tüm Ürünler </label>
+                                    <asp:CheckBox ID="CheckBoxAll" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Tüm Ürünler</label>
                                 </div>
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    <label class="custom-control-label" for="customCheck2">Meyve Fidanları </label>
+                                    <asp:CheckBox ID="CheckBoxMeyve" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Meyve Fidanları</label>
                                 </div>
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                    <label class="custom-control-label" for="customCheck3">Ağaç Fidanları </label>
+                                    <asp:CheckBox ID="CheckBoxAgac" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Ağaç Fidanları</label>
+                                   
                                 </div>
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                    <label class="custom-control-label" for="customCheck4">Tropikal Meyve Fidanları </label>
+                                    <asp:CheckBox ID="CheckBoxTropikal" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Tropikal Meyve Fidanları</label>
                                 </div>
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                    <label class="custom-control-label" for="customCheck5">Çiçekler </label>
+                                    <asp:CheckBox ID="CheckBoxCicek" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Çiçekler</label>
                                 </div>
-                                <asp:Button id="KategoriSırala" runat="server" CssClass="btn-dark align-items-center alazea-btn" Text="Getir"  />
+                                <br />
+                                <asp:Button id="KategoriSırala" runat="server" CssClass="btn-dark align-items-center alazea-btn" OnClick="KategoriSırala_Click" Text="Getir"  />
                             </div>
                         </div>
 
@@ -112,25 +95,26 @@
                             <div class="widget-desc">
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck8">
-                                    <label class="custom-control-label" for="customCheck8">Alfabetik Sıralama A-Z</label>
+                                    <asp:CheckBox ID="CheckBoxisimAZ" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Alfabetik Sıralama A-Z</label>
                                 </div>
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck9">
-                                    <label class="custom-control-label" for="customCheck9">Alfabetik Sıralama Z-A</label>
+                                     <asp:CheckBox ID="CheckBoxisimZA" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Alfabetik Sıralama Z-A</label>
                                 </div>
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck10">
-                                    <label class="custom-control-label" for="customCheck10">Fiyat: Düşükten Yükseğe</label>
+                                    <asp:CheckBox ID="CheckBoxFiyatDY" CssClass="form-check-input"  Width="35px" Height="35px" runat="server" />
+                                    <label>Fiyat: Düşükten Yükseğe</label>
                                 </div>
                                 <!-- Single Checkbox -->
                                 <div class="custom-control custom-checkbox d-flex align-items-center">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck11">
-                                    <label class="custom-control-label" for="customCheck11">Fiyat: Yüksekten Düşüğe</label>
+                                    <asp:CheckBox ID="CheckBoxFiyatYD" CssClass="form-check-input" Width="35px" Height="35px" runat="server" />
+                                    <label> Fiyat: Yüksekten Düşüğe</label>
                                 </div>
-                                <asp:Button runat="server" CssClass="btn-primary align-items-center alazea-btn"  Text="Sırala"  />
+                                <br />
+                                <asp:Button ID="Urunsirala" runat="server" CssClass="btn-primary align-items-center alazea-btn" OnClick="Urunsirala_Click"  Text="Sırala"  />
                             </div>
                         </div>
                     </div>
@@ -139,7 +123,9 @@
                 <!-- All Products Area -->
                 <div class="col-12 col-md-8 col-lg-9">
                     <div class="shop-products-area">
+                        <asp:Label id="HatalariYaz" ForeColor="Red" CssClass="align-content-center" Font-Size="Large" runat="server" Text=""></asp:Label><br /><br /><br />
                         <div class="row">
+                        
                         <asp:Repeater id="rpturun" runat="server">
                             <ItemTemplate>
                                 <!-- Single Product Area -->
