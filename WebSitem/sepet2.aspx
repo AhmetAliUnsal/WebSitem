@@ -16,7 +16,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="SayfaBaslik" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="OrtaAlan" runat="server">
- 
+
   <div class="row">
     <div class="col-md-3 text-center">
       <img src="images/img_1.png" width="150px" height="150px">

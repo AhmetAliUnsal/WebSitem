@@ -37,22 +37,6 @@
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="shop-sidebar-area">
 
-                        <!-- Shop Widget -->
-                        <div class="shop-widget price mb-50">
-                            <h4 class="widget-title">Fiyat</h4>
-                            <div class="widget-desc">
-                                <div class="slider-range">
-                                    <div data-min="10" data-max="500" data-unit="TL" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="10" data-value-max="500" data-label-result="Fiyat:">
-                                        <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
-                                        <span class="ui-slider-handle ui-state-default ui-corner-all first-handle" tabindex="0"></span>
-                                        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                                    </div>
-                                    <div class="range-price">Fiyat: 10 TL - 500 TL</div>
-                                    <br />
-                                    <asp:Button id="fiyatsırala" runat="server" CssClass="btn-danger align-items-center alazea-btn" OnClick="fiyatsırala_Click" Text="Sırala"  />
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- Shop Widget -->
                         <div class="shop-widget catagory mb-50">
@@ -146,7 +130,7 @@
                                     </div>
                                     <!-- Product Info -->
                                     <div class="product-info mt-15 text-center">
-                                            <div data-id="<%# Eval("urunid") %>" data-name="<%# Eval("urunadi") %>" ><%# Eval("urunadi") %></div>
+                                            <h6 style="color:red"><%# Eval("urunadi") %></h6>
                                             <div>Urun Stok:<%# Eval("urunstok") %> Adet</div>
                                         <div>Adet Fiyatı:<%# Eval("urunbirimfiyat") %> TL</div>
                                     </div>

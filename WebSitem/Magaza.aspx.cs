@@ -25,37 +25,81 @@ namespace WebSitem
             {
                 rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).ToList();
                 rpturun.DataBind();
-                HatalariYaz.Text = "all bölümü";
+            }
+            else if (CheckBoxMeyve.Checked == true && CheckBoxAgac.Checked == true && CheckBoxTropikal.Checked == true && CheckBoxCicek.Checked==true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxMeyve.Checked == true && CheckBoxAgac.Checked == true && CheckBoxTropikal.Checked==true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1 || p.urunkategorifkid == 3 || p.urunkategorifkid==2).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxMeyve.Checked == true && CheckBoxAgac.Checked == true && CheckBoxCicek.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1 || p.urunkategorifkid == 3 || p.urunkategorifkid == 4).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxMeyve.Checked == true && CheckBoxCicek.Checked == true && CheckBoxTropikal.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1 || p.urunkategorifkid == 4 || p.urunkategorifkid == 2).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxCicek.Checked == true && CheckBoxAgac.Checked == true && CheckBoxTropikal.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 4 || p.urunkategorifkid == 3 || p.urunkategorifkid == 2).ToList();
+                rpturun.DataBind();
             }
             else if (CheckBoxMeyve.Checked == true && CheckBoxAgac.Checked==true)
             {
-                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1).Where(p=>p.urunkategorifkid==3).ToList();
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1 || p.urunkategorifkid==3).ToList();
                 rpturun.DataBind();
-                HatalariYaz.Text = "meyve bölümü";
+            }
+            else if (CheckBoxMeyve.Checked == true && CheckBoxTropikal.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1 || p.urunkategorifkid==2).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxMeyve.Checked == true && CheckBoxCicek.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1 || p.urunkategorifkid==4).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxAgac.Checked == true && CheckBoxTropikal.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 3 || p.urunkategorifkid==2).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxAgac.Checked == true && CheckBoxCicek.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 3 || p.urunkategorifkid==4).ToList();
+                rpturun.DataBind();
+            }
+            else if (CheckBoxTropikal.Checked == true && CheckBoxCicek.Checked == true)
+            {
+                rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 2 || p.urunkategorifkid==4).ToList();
+                rpturun.DataBind();
             }
             else if (CheckBoxMeyve.Checked == true)
             {
                 rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 1).ToList();
                 rpturun.DataBind();
-                HatalariYaz.Text = "meyve bölümü";
             }
             else if(CheckBoxAgac.Checked == true)
             {
                 rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p=>p.urunkategorifkid==3).ToList();
                 rpturun.DataBind();
-                HatalariYaz.Text = "ağaç bölümü";
             }
             else if (CheckBoxTropikal.Checked == true)
             {
                 rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 2).ToList();
                 rpturun.DataBind();
-                HatalariYaz.Text = "tropikal bölümü";
             }
             else if (CheckBoxCicek.Checked == true)
             {
                 rpturun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Where(p => p.urunkategorifkid == 4).ToList();
                 rpturun.DataBind();
-                HatalariYaz.Text = "çiçek bölümü";
             }
             else
             {
@@ -120,9 +164,9 @@ namespace WebSitem
 
         }
 
-        protected void fiyatsırala_Click(object sender, EventArgs e)
+
+        protected void SepetEkle_Click(object sender, EventArgs e)
         {
-            HatalariYaz.Text = "";
 
         }
     }

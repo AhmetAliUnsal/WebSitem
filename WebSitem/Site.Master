@@ -114,12 +114,12 @@
                                         <ul class="dropdown">
                                             <li><a href="Default.aspx">Anasayfa</a></li>
                                             <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
-                                            <li><a href="template/shop.html">Alışveriş</a>
+                                            <li><a href="Magaza.aspx">Alışveriş</a>
                                                 <ul class="dropdown">
-                                                    <li><a href="template/shop.html">Alışveriş</a></li>
+                                                    <li><a href="Magaza.aspx">Alışveriş</a></li>
                                                     <li><a href="template/shop-details.html">Alışveriş detayı</a></li>
-                                                    <li><a href="template/cart.html">Sepet</a></li>
-                                                    <li><a href="template/checkout.html">Adres</a></li>
+                                                    <li><a href="sepet.aspx">Sepet</a></li>
+                                                    <li><a href="GonderimAdres.aspx">Adres</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="Portföyümüz.aspx">Portföy</a>
@@ -133,7 +133,7 @@
                                             <li><a href="Iletisim.aspx">İletişim</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="template/shop.html">Market</a></li>
+                                    <li><a href="Magaza.aspx">Market</a></li>
                                     <li><a href="Portföyümüz.aspx">Portföy</a></li>
                                     <li><a href="Iletisim.aspx">İletişim</a></li>
                                 </ul>
