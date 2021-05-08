@@ -37,22 +37,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                            <asp:Repeater ID="repeaterurunalan" runat="server">
+                                <ItemTemplate>
+                                    <tr>
                                     <td class="cart_product_img">
-                                        <a href="#"><img src="<%# Eval("urunresimadres") %>" alt=""></a>
+                                        <a href="#"><img src="<%# Eval("urunresimi") %>" alt=""></a>
                                         <h5><%# Eval("urunadi") %></h5>
                                     </td>
                                     <td class="qty">
                                         <div class="quantity">
                                             <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="1">
+                                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="<%# Eval("urunadet") %>">
                                             <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                         </div>
                                     </td>
-                                    <td class="price"><span><%# Eval("urunbirimfiyat") %></span></td>
-                                    <td class="total_price"><span><%# Eval("fiyat") %></span></td>
+                                    <td class="price"><span><%# Eval("urunfiyat") %></span></td>
+                                    <td class="total_price"><%# Eval("fiyat") %><span></span></td>
                                     <td class="action"><a href="#"><i class="icon_close"></i></a></td>
                                 </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                                
+                                    
                             </tbody>
                         </table>
                     </div>
@@ -65,7 +71,7 @@
                         <h5 class="title--">Sepet Tutar</h5>
                         <div class="subtotal d-flex justify-content-between">
                             <h5>Toplam Tutar</h5>
-                            <h5><%# Eval("toplamfiyat") %></h5>
+                            <h5><%# Eval("fiyat") %></h5>
                         </div>
                         <div class="checkout-btn">
                             <a href="GonderimAdres.aspx" class="btn alazea-btn w-100">Ödeme Ekranına Geç</a>

@@ -23,16 +23,15 @@ namespace WebSitem.DataAccess
         public int sepetid { get; set; }
         public Nullable<int> musterifkid { get; set; }
         public Nullable<int> urunfkid { get; set; }
-        public Nullable<int> gonderimadresfkid { get; set; }
-        public Nullable<int> faturaadresfkid { get; set; }
         public Nullable<int> urunadet { get; set; }
         public Nullable<int> fiyat { get; set; }
+        public string urunadi { get; set; }
+        public string urunresimi { get; set; }
+        public Nullable<int> urunfiyat { get; set; }
     
-        public virtual faturaadres faturaadres { get; set; }
-        public virtual gonderimadres gonderimadres { get; set; }
+        public virtual musteri musteri { get; set; }
         public virtual urun urun { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<siparis> siparis { get; set; }
-        public virtual musteri musteri { get; set; }
     }
 }

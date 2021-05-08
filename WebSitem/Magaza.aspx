@@ -32,7 +32,11 @@
                 </div>
             </div>
             <form runat="server">
-            <div class="row">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                
+                <ContentTemplate>
+                    <div class="row">
                 <!-- Sidebar Area -->
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="shop-sidebar-area">
@@ -116,23 +120,30 @@
                             <div id="sirala" class="col-12 col-sm-6 col-lg-4">
                                 <div class="single-product-area mb-50">
                                     <!-- Product Image -->
-                                    <div class="product-img">
-                                        <a href="shop-details.html"><img src="<%# Eval("urunresimadres") %>" style="width:300px; height:300px " alt=""></a>
+                                    <form action="Sepet.aspx" method="get">
+                                    <div>
+                                        <a href="<%# Eval("urunresimadres") %>"><img src="<%# Eval("urunresimadres") %>" style="width:300px; height:300px " alt=""></a>
+                                       <br /><br />
                                         <!-- Product Tag -->
-                                        <div class="product-tag">
-                                            <a href="#"><%# Eval("urunid") %></a>
-                                        </div>
-                                        <div class="product-meta d-flex">
-                                            <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                            <a href="cart.html" class="add-to-cart-btn">Sepete Ekle</a>
-                                            <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
+                                        <div style="text-align:center" class="product-meta ">
+                                            <input type="hidden" name="urunid" value="<%# Eval("urunid")%>" />
+                                            <input type="hidden" name="urunadi" value="<%# Eval("urunadi") %>"/>
+                                            <input type="hidden" name="urununresmi" value="<%# Eval("urunresimadres") %>" />
+                                            <input type="hidden" name="urunbirimfiyat" value="<%# Eval("urunbirimfiyat")%>" />
+                                            <input type="hidden" name="urunstok" value="<%# Eval("urunstok") %>"/>
+                                            <input class="wishlist-btn" id="AdetSayisi" name="AdetSayisi" value="1" type="number" max="<%# Eval("urunstok") %>" min="1" style="background:#303030; color:white; width:100px" />
+                                           <%--<a class="wishlist-btn" style="background:#303030; color:white; height:150px; width:130px;" href="Sepet.aspx?urunId=<%# Eval("urunid")%>" >Sepete Ekle</a>--%>
+                                            <input type="submit" class="wishlist-btn" style="background:#303030; color:white; height:30px; width:100px;" value="Sepete Ekle" />
+                                            
                                         </div>
                                     </div>
+                                        </form>
                                     <!-- Product Info -->
                                     <div class="product-info mt-15 text-center">
+                                            
                                             <h6 style="color:red"><%# Eval("urunadi") %></h6>
                                             <div>Urun Stok:<%# Eval("urunstok") %> Adet</div>
-                                        <div>Adet Fiyatı:<%# Eval("urunbirimfiyat") %> TL</div>
+                                        <div>Adet Fiyatı:<%# Eval("urunbirimfiyat")%> TL</div>
                                     </div>
                                 </div>
                             </div>
@@ -143,6 +154,9 @@
                     </div>
                 </div>
             </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
           </form>
         </div>
     </section>

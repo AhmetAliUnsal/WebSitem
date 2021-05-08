@@ -165,9 +165,6 @@ namespace WebSitem
         }
 
 
-        protected void SepetEkle_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

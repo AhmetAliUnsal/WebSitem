@@ -18,6 +18,7 @@ namespace WebSitem.DataAccess
         public urun()
         {
             this.sepet = new HashSet<sepet>();
+            this.sepeton = new HashSet<sepeton>();
         }
     
         public int urunid { get; set; }
@@ -32,5 +33,7 @@ namespace WebSitem.DataAccess
         public virtual kategori kategori { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sepet> sepet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<sepeton> sepeton { get; set; }
     }
 }

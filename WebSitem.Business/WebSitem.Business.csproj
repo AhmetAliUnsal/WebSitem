@@ -59,6 +59,8 @@
     <Compile Include="Kategori.cs" />
     <Compile Include="musteri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sepet.cs" />
+    <Compile Include="Sepeton.cs" />
     <Compile Include="Urun.cs" />
   </ItemGroup>
   <ItemGroup>

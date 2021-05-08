@@ -30,7 +30,7 @@ namespace WebSitem
             {
                 TextboxTemizle(this);
                 kayitsonuc.Text = "Başarıyla Eklenildi.Lütfen Giriş Yapınız!!!";
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(50);
                 Response.Redirect("Login.aspx");
             }
             else

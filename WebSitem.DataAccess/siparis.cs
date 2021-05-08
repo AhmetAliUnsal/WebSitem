@@ -15,11 +15,15 @@ namespace WebSitem.DataAccess
     public partial class siparis
     {
         public int siparisid { get; set; }
+        public Nullable<int> faturaadresfkid { get; set; }
+        public Nullable<int> gonderimadresfkid { get; set; }
         public Nullable<int> sepetfkid { get; set; }
         public Nullable<int> toplamfiyat { get; set; }
         public Nullable<int> odemetipifkid { get; set; }
         public byte[] siparistarihi { get; set; }
     
+        public virtual faturaadres faturaadres { get; set; }
+        public virtual gonderimadres gonderimadres { get; set; }
         public virtual odemetipi odemetipi { get; set; }
         public virtual sepet sepet { get; set; }
     }
