@@ -19,6 +19,8 @@ namespace WebSitem
             }
             else if (Session["kullanici"].ToString() == "admin")
             {
+                if (!Page.IsPostBack)
+                {
                     dropdowndurum.Items.Clear();
                     WebSitem.Business.Durum nesne2 = new Business.Durum();
 
@@ -34,6 +36,8 @@ namespace WebSitem
 
                     }
                     this.dropdowndurum.DataBind();
+                }
+                    
 
                 
                 

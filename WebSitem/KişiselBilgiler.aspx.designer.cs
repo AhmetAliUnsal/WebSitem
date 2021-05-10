@@ -33,102 +33,120 @@ namespace WebSitem
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// first_name denetimi.
+        /// kullaniciadsoyad denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox first_name;
+        protected global::System.Web.UI.WebControls.TextBox kullaniciadsoyad;
 
         /// <summary>
-        /// RequiredFieldValidatorad denetimi.
+        /// Requiredadsoyad denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorad;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredadsoyad;
 
         /// <summary>
-        /// last_name denetimi.
+        /// kullanicitcno denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox last_name;
+        protected global::System.Web.UI.WebControls.TextBox kullanicitcno;
 
         /// <summary>
-        /// RequiredFieldValidatorsoyad denetimi.
+        /// RequiredTcNo denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorsoyad;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredTcNo;
 
         /// <summary>
-        /// phone_number denetimi.
+        /// kullanicimail denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox phone_number;
+        protected global::System.Web.UI.WebControls.TextBox kullanicimail;
 
         /// <summary>
-        /// RequiredFieldValidatortel denetimi.
+        /// Requiredkullanimail denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatortel;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredkullanimail;
 
         /// <summary>
-        /// dropdownilce denetimi.
+        /// RegularExpressionmail denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdownilce;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionmail;
 
         /// <summary>
-        /// address denetimi.
+        /// kullanicitel denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address;
+        protected global::System.Web.UI.WebControls.TextBox kullanicitel;
 
         /// <summary>
-        /// RequiredFieldValidatoradres denetimi.
+        /// Requiredkullanicitel denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoradres;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredkullanicitel;
 
         /// <summary>
-        /// FaturaEkleSonuc denetimi.
+        /// kullanicisifre1 denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FaturaEkleSonuc;
+        protected global::System.Web.UI.WebControls.TextBox kullanicisifre1;
 
         /// <summary>
-        /// Button1 denetimi.
+        /// Requiredkullanicisifre1 denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredkullanicisifre1;
+
+        /// <summary>
+        /// Guncelle denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Guncelle;
+
+        /// <summary>
+        /// kayitsonuc denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label kayitsonuc;
     }
 }

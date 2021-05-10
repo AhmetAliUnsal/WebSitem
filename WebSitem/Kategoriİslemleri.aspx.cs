@@ -17,21 +17,25 @@ namespace WebSitem
             }
             else if (Session["kullanici"].ToString() == "admin")
             {
-                dropdownkategori.Items.Clear();
-                WebSitem.Business.Kategori nesne2 = new Business.Kategori();
-
-                ListItemCollection options2 = new ListItemCollection();
-                this.dropdownkategori.DataSource = options2;
-                options2.Add(new ListItem("Seçiniz", "Seçiniz"));
-                var DurumYaz = nesne2.KategoriGetir();
-
-                for (int i = 0; i < DurumYaz.Count; i++)
+                if (!Page.IsPostBack)
                 {
-                    options2.Add(new ListItem(DurumYaz[i].kategoriad, DurumYaz[i].kategoriid.ToString()));
-                    this.dropdownkategori.DataSource = options2;
+                    dropdownkategori.Items.Clear();
+                    WebSitem.Business.Kategori nesne2 = new Business.Kategori();
 
+                    ListItemCollection options2 = new ListItemCollection();
+                    this.dropdownkategori.DataSource = options2;
+                    options2.Add(new ListItem("Seçiniz", "Seçiniz"));
+                    var DurumYaz = nesne2.KategoriGetir();
+
+                    for (int i = 0; i < DurumYaz.Count; i++)
+                    {
+                        options2.Add(new ListItem(DurumYaz[i].kategoriad, DurumYaz[i].kategoriid.ToString()));
+                        this.dropdownkategori.DataSource = options2;
+
+                    }
+                    this.dropdownkategori.DataBind();
                 }
-                this.dropdownkategori.DataBind();
+                
 
 
 
@@ -75,14 +79,14 @@ namespace WebSitem
             WebSitem.Business.Kategori durum = new WebSitem.Business.Kategori();
             WebSitem.DataAccess.kategori sil = new WebSitem.DataAccess.kategori();
 
-            var secilen = dropdownkategori.SelectedItem.Value;
-            if (secilen == null)
+            var sec = dropdownkategori.SelectedItem.Text;
+            if (sec == null)
             {
                 SilSonuc.Text = "Seçilen Kategori Olmadığı için Silinemedi";
             }
             else
             {
-                var sonuc = durum.KategoriSil(secilen);
+                var sonuc = durum.KategoriSil(sec);
                 if (sonuc == "1")
                 {
                     dropdownkategori.Items.Clear();

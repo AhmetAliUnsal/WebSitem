@@ -200,6 +200,22 @@ namespace WebSitem.Business
 
         }
 
+        public string MusteriBilgiGuncelle(WebSitem.DataAccess.musteri nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.musteri yeni = new DataAccess.musteri();
+
+            var ara = ekle.musteri.Where(p => p.musteriTc == nesne.musteriTc).FirstOrDefault();
+
+            ara.musteriadi = nesne.musteriadi;
+            ara.musteriemail = nesne.musteriemail;
+            ara.musteritel = nesne.musteritel;
+            ara.musteriTc = nesne.musteriTc;
+            ara.musterisifre = nesne.musterisifre;
+           
+            ekle.SaveChanges();
+            return "1";
+        }
         public string VeriGüncelle(string musteriTc,WebSitem.DataAccess.musteri nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();

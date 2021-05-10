@@ -124,6 +124,7 @@
                                         <ul class="dropdown">
                                             <li><a href="Default.aspx">Anasayfa</a></li>
                                             <li><a href="Sepet.aspx">Sepet</a></li>
+                                            <li><a href="KişiselBilgiler.aspx">Kişisel Bilgileri Düzenle</a></li>
                                             <li><a href="HesapDogrula.aspx">Şifre Sıfırlama</a></li>
                                             <li><a href="GonderimAdres.aspx">Gonderim Adres</a></li>
                                             <li><a href="FaturaAdres.aspx">Fatura Adres</a></li>
@@ -131,6 +132,7 @@
                                     </li>
                                     <li><asp:Label ID="AdminSayfa" Visible="false" runat="server" Text=""><a href="#" > Admin Sayfası</a></asp:Label>
                                         <ul class="dropdown">
+                                            <li><a href="KişiselBilgiler.aspx">Kişisel Bilgileri Düzenle</a></li>
                                             <li><a href="UrunEkle.aspx">Urun Ekle</a></li>
                                             <li><a href="Kategoriİslemleri.aspx">Kategori İşlemleri</a></li>
                                             <li><a href="DurumlarıYonet.aspx">Durumları Yönet</a></li>

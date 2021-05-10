@@ -39,7 +39,7 @@
                                 
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="DurumEkle" CssClass="btn btn-primary" runat="server" OnClick="DurumEkle_Click" Text="Durum Ekle" />
+                                        <asp:Button ID="DurumEkle" CssClass="btn alazea-btn btn-primary" BackColor="#3399ff" runat="server" OnClick="DurumEkle_Click" Text="Durum Ekle" />
                                         <asp:Label ID="EklemeSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label><br /><br />
                                     </div>
 
@@ -50,14 +50,14 @@
                                 </div>
                                  <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="DurumSil" CssClass="btn  btn-danger" runat="server" OnClick="DurumSil_Click" Text="Durum Sil" />
+                                        <asp:Button ID="DurumSil" CssClass="btn alazea-btn  btn-danger" BackColor="#ff0000" runat="server" OnClick="DurumSil_Click" Text="Durum Sil" />
                                         <asp:Label ID="SilSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 
                                 </div>
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="DurumListele" CssClass="btn  btn-secondary"  runat="server" OnClick="DurumListele_Click" Text="Durumları Listele" />
+                                        <asp:Button ID="DurumListele" CssClass="btn  alazea-btn btn-secondary" BackColor="#996600"  runat="server" OnClick="DurumListele_Click" Text="Durumları Listele" />
                                         <asp:Label ID="ListeSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 

@@ -40,7 +40,7 @@
                                 
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="KategoriEkle" CssClass="btn btn-primary" runat="server" OnClick="KategoriEkle_Click"  Text="Durum Ekle" />
+                                        <asp:Button ID="KategoriEkle" CssClass="btn alazea-btn btn-primary" BackColor="#3399ff" runat="server" OnClick="KategoriEkle_Click"  Text="Durum Ekle" />
                                         <asp:Label ID="EklemeSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 
@@ -51,14 +51,14 @@
                                 </div>
                                  <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="KategoriSil" CssClass="btn  btn-danger" runat="server" OnClick="KategoriSil_Click"  Text="Durum Sil" />
+                                        <asp:Button ID="KategoriSil" CssClass="btn alazea-btn btn-danger" BackColor="#ff0000" runat="server" OnClick="KategoriSil_Click"  Text="Durum Sil" />
                                         <asp:Label ID="SilSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 
                                 </div>
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="KategoriListele" CssClass="btn  btn-secondary" runat="server" OnClick="KategoriListele_Click"  Text="Durumları Listele" />
+                                        <asp:Button ID="KategoriListele" CssClass="btn alazea-btn btn-secondary" BackColor="#996600" runat="server" OnClick="KategoriListele_Click"  Text="Durumları Listele" />
                                         <asp:Label ID="ListeSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 
