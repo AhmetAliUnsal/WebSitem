@@ -20,8 +20,12 @@ namespace WebSitem
             }
             else
             {
+              
                 string id = Request.QueryString["urunid"];
                 int musteriid = int.Parse(Session["musteriid"].ToString());
+
+                repeaterurunalan.DataSource = ent.sepet.OrderByDescending(p => p.sepetid).Where(p=>p.musterifkid==musteriid).ToList();
+                repeaterurunalan.DataBind();
 
                 if (!String.IsNullOrEmpty(id))
                 {
@@ -42,7 +46,7 @@ namespace WebSitem
                     sepet.urunfiyat = int.Parse(birimfiyat);
                     var değer = sepet1.SepetEkle(sepet);
 
-                    repeaterurunalan.DataSource = ent.sepet.OrderByDescending(p => p.sepetid).Where(p=>p.musterifkid==musteriid).ToList();
+                    repeaterurunalan.DataSource = ent.sepet.OrderByDescending(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
                     repeaterurunalan.DataBind();
 
 

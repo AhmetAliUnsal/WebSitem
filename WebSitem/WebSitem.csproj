@@ -79,7 +79,9 @@
     <Content Include="Iletisim.aspx" />
     <Content Include="Kategoriİslemleri.aspx" />
     <Content Include="Kayit.aspx" />
+    <Content Include="KişiselBilgiler.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Magaza.aspx" />
     <Content Include="Portföyümüz.aspx" />
     <Content Include="Sepet.aspx" />
@@ -295,12 +297,26 @@
     <Compile Include="Kayit.aspx.designer.cs">
       <DependentUpon>Kayit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="KişiselBilgiler.aspx.cs">
+      <DependentUpon>KişiselBilgiler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KişiselBilgiler.aspx.designer.cs">
+      <DependentUpon>KişiselBilgiler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Magaza.aspx.cs">
       <DependentUpon>Magaza.aspx</DependentUpon>

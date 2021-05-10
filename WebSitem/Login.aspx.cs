@@ -22,6 +22,7 @@ namespace WebSitem
             nesne1.musterisifre = psw.Text;
             var tur = nesne.MusteriKullaniciTur(email.Text);
             var id = nesne.MusteriIdSorgula(email.Text);
+            var ad = nesne.MusteriAd(email.Text);
             var değer = nesne.MusteriSorgula(nesne1);
             if (değer == "1")
             {
@@ -30,6 +31,7 @@ namespace WebSitem
                 System.Threading.Thread.Sleep(50);
                 Session["musteriid"] =id;
                 Session["kullanici"] = tur;
+                Session["kullaniciad"] = ad;
                 Session["mail"]=email.Text;
                 
                 Session.Timeout = 30;

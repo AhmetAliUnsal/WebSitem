@@ -69,11 +69,18 @@
                                 </div>
                                 <!-- Login -->
                                 <div class="login">
-                                    <a href="Login.aspx"  aria-hidden="true"><i class="fa fa-user" ></i> <span>Login</span></a>
+                                       
+                                    <a href="Login.aspx"  aria-hidden="true"><i class="fa fa-user" ></i> <asp:Label ID="Giris" runat="server" Text="Login"></asp:Label></a>
+                                </div>
+                                  <!-- Login -->
+                                <div class="login">
+                                     <asp:Label ID="Logout" runat="server" Visible="false" Text=""><a href="Logout.aspx"  aria-hidden="true"><i class="fa fa-user-times"></i> Çıkış Yap</a></asp:Label>
+                                   
                                 </div>
                                 <!-- Cart -->
                                 <div class="cart">
-                                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
+                                        <asp:Label ID="Sepet" runat="server" Visible="false" Text="Label"> <a href="sepet.aspx"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Sepet <span class="cart-quantity"></span></span></a></asp:Label>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -110,38 +117,31 @@
                                 <ul>
                                     <li><a href="Default.aspx">Anasayfa</a></li>
                                     <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
-                                    <li><a href="#">Sayfalar</a>
-                                        <ul class="dropdown">
-                                            <li><a href="Default.aspx">Anasayfa</a></li>
-                                            <li><a href="Hakkımızda.aspx">Hakkımızda</a></li>
-                                            <li><a href="Magaza.aspx">Alışveriş</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="Magaza.aspx">Alışveriş</a></li>
-                                                    <li><a href="template/shop-details.html">Alışveriş detayı</a></li>
-                                                    <li><a href="sepet.aspx">Sepet</a></li>
-                                                    <li><a href="GonderimAdres.aspx">Adres</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="Portföyümüz.aspx">Portföy</a>
-                                            </li>
-                                            <li><a href="template/blog.html">Yazılar</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="template/blog.html">Yazılar</a></li>
-                                                    <li><a href="template/single-post.html">Yazılar Hakkında</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="Iletisim.aspx">İletişim</a></li>
-                                        </ul>
-                                    </li>
                                     <li><a href="Magaza.aspx">Market</a></li>
                                     <li><a href="Portföyümüz.aspx">Portföy</a></li>
                                     <li><a href="Iletisim.aspx">İletişim</a></li>
+                                    <li><asp:Label ID="Kullanici" Visible="false" runat="server" Text=""><a href="#" > Kullanıcı Sayfaları </a></asp:Label>
+                                        <ul class="dropdown">
+                                            <li><a href="Default.aspx">Anasayfa</a></li>
+                                            <li><a href="Sepet.aspx">Sepet</a></li>
+                                            <li><a href="HesapDogrula.aspx">Şifre Sıfırlama</a></li>
+                                            <li><a href="GonderimAdres.aspx">Gonderim Adres</a></li>
+                                            <li><a href="FaturaAdres.aspx">Fatura Adres</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><asp:Label ID="AdminSayfa" Visible="false" runat="server" Text=""><a href="#" > Admin Sayfası</a></asp:Label>
+                                        <ul class="dropdown">
+                                            <li><a href="UrunEkle.aspx">Urun Ekle</a></li>
+                                            <li><a href="Kategoriİslemleri.aspx">Kategori İşlemleri</a></li>
+                                            <li><a href="DurumlarıYonet.aspx">Durumları Yönet</a></li>
+                                            <li><a href="Sepet.aspx">Sepet</a></li>
+                                            <li><a href="HesapDogrula.aspx">Şifre Sıfırlama</a></li>
+                                            <li><a href="GonderimAdres.aspx">Gonderim Adres</a></li>
+                                            <li><a href="FaturaAdres.aspx">Fatura Adres</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
 
-                                <!-- Search Icon -->
-                                <div id="searchIcon">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
 
                             </div>
                             <!-- Navbar End -->
@@ -216,37 +216,6 @@
                                     <li><a href="#">Policities</a></li>
                                 </ul>
                             </nav>
-                        </div>
-                    </div>
-
-                    <!-- Single Footer Widget -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-footer-widget">
-                            <div class="widget-title">
-                                <h5>En Çok Satan</h5>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="template/shop-details.html"><img src="template/img/bg-img/4.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="template/shop-details.html">Cactus Flower</a>
-                                    <p>$10.99</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Best Seller Products -->
-                            <div class="single-best-seller-product d-flex align-items-center">
-                                <div class="product-thumbnail">
-                                    <a href="template/shop-details.html"><img src="template/img/bg-img/5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <a href="template/shop-details.html">Tulip Flower</a>
-                                    <p>$11.99</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 

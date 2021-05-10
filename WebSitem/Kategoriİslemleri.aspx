@@ -33,7 +33,7 @@
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
                                 <div class="row">
-                               <div id="kategoriad" class="col-md-12 mb-4">
+                               <div id="kategoriadi" class="col-md-12 mb-4">
                                     <label for="kategoriad">Durum Ad:</label>
                                     <asp:TextBox ID="kategoriad" CssClass="form-control" runat="server"></asp:TextBox>
                                </div>
