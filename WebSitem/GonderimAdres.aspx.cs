@@ -11,12 +11,12 @@ namespace WebSitem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Button1.Visible = true;
-            SistemKayit.Visible = true;
-            FaturaAdresEkleme.Visible = true;
-            KayitEdilme.Visible = true;
-            FaturaAdresKayit.Visible = true;
-            Guncelle.Visible = false;
+            //Button1.Visible = true;
+            //SistemKayit.Visible = true;
+            //FaturaAdresEkleme.Visible = true;
+            //KayitEdilme.Visible = true;
+            //FaturaAdresKayit.Visible = true;
+            //Guncelle.Visible = false;
             if (Session["mail"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -53,9 +53,7 @@ namespace WebSitem
                         dropdownil_SelectedIndexChanged(gelenil,e);
                         Button1.Visible = false;
                         Guncelle.Visible = true;
-                        SistemKayit.Visible = false;
                         FaturaAdresEkleme.Visible = false;
-                        KayitEdilme.Visible = false;
                         FaturaAdresKayit.Visible = false;
 
                     }
@@ -197,7 +195,30 @@ namespace WebSitem
 
         protected void Guncelle_Click(object sender, EventArgs e)
         {
+            WebSitem.Business.Adres adres = new Business.Adres();
+            WebSitem.DataAccess.gonderimadres guncel = new DataAccess.gonderimadres();
 
+            var ilid = adres.ilidgetir(dropdownil.SelectedItem.Value);
+            var ilceid = adres.ilceidgetir(dropdownilce.SelectedItem.Value);
+
+            guncel.alıcıadı = first_name.Text;
+            guncel.alıcısoyadı = last_name.Text;
+            guncel.alıcıtelefon = phone_number.Text;
+            guncel.gonderimadres1 = address.Text;
+            guncel.ilcefkid = int.Parse(ilceid);
+            guncel.musterifkid =int.Parse(Session["musteriid"].ToString());
+            guncel.ilfkid =int.Parse(ilid);
+
+            var değer = adres.GonderimAdresGuncelle(guncel);
+            if (değer == "1")
+            {
+                EklemeSonuc.Text = "Başarıyla Güncellendi.";
+            }
+            else
+            {
+                EklemeSonuc.Text = "Başarısız!!! Tekrar Deneyiniz!";
+                Response.Redirect("GonderimAdres.aspx");
+            }
         }
     }
 }

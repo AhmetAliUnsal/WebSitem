@@ -62,23 +62,10 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidatoradres" runat="server" ControlToValidate="address" ForeColor="Red" ErrorMessage="Boş Bırakılamaz"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-12">
-                                    <div class="d-flex align-items-center">
-                                        <!-- Single Checkbox -->
-                                        <div class="custom-control custom-checkbox d-flex align-items-center mr-30">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Adresiniz Sisteme Kayıt Edilsin Mi?</label>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                            <!-- Single Checkbox -->
-                                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                                                 <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                <label class="custom-control-label" for="customCheck2">Fatura Adresi Aynı Mı?</label>
-                                            </div>
-                                    </div>
                                     <div class="checkout-btn mt-30">
                                         <asp:Label ID="FaturaEkleSonuc" runat="server" Text=""></asp:Label>
-                                        <asp:Button ID="Button1" CssClass="btn alazea-btn w-100 btn-primary" OnClick="Button1_Click" runat="server" Text="Kaydet" />
+                                        <asp:Button ID="Button1" CssClass="btn btn alazea-btn btn-danger" BackColor="#ff3300" OnClick="Button1_Click" runat="server" Text="Kaydet" />
+                                        <asp:Button ID="Guncelle" CssClass="btn alazea-btn btn-secondary" BackColor="#33cc33" runat="server" Visible="false" OnClick="Guncelle_Click" Text="Güncelle" />
                                     </div>
                                 </div>
                             </div>

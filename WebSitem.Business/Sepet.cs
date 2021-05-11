@@ -33,5 +33,9 @@ namespace WebSitem.Business
             }
             
         }
+        public string SepetUrunSil()
+        {
+            return "";
+        }
     }
 }

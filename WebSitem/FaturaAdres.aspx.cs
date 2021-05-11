@@ -11,27 +11,63 @@ namespace WebSitem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Button1.Visible = true;
+            //Guncelle.Visible = false;
             if (Session["mail"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
             else
             {
+                WebSitem.Business.Adres gonder = new Business.Adres();
+                int id = int.Parse(Session["musteriid"].ToString());
+                var veri = gonder.GetByfaturaadres(id);
+
                 if (!Page.IsPostBack)
                 {
-                    WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
-
-                    ListItemCollection options = new ListItemCollection();
-                    this.dropdownil.DataSource = options;
-                    options.Add(new ListItem("Seçiniz", "Seçiniz"));
-                    var ilYaz = nesne.IlGetir();
-                    for (int i = 0; i < ilYaz.Count; i++)
+                    if (veri != null)
                     {
-                        options.Add(new ListItem(ilYaz[i].ilad, ilYaz[i].ilid.ToString()));
-                        this.dropdownil.DataSource = options;
+                        WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
 
+                        ListItemCollection options = new ListItemCollection();
+                        this.dropdownil.DataSource = options;
+                        options.Add(new ListItem("Seçiniz", "Seçiniz"));
+                        var ilYaz = nesne.IlGetir();
+                        for (int i = 0; i < ilYaz.Count; i++)
+                        {
+                            options.Add(new ListItem(ilYaz[i].ilad, ilYaz[i].ilid.ToString()));
+                            this.dropdownil.DataSource = options;
+
+                        }
+                        this.dropdownil.DataBind();
+
+                        var gelenil = gonder.iladGetir(int.Parse(veri.ilfkid.ToString()));
+                        first_name.Text = veri.faturakad;
+                        last_name.Text = veri.faturasoyad;
+                        phone_number.Text = veri.faturatel;
+                        address.Text = veri.faturaadres1;
+                        dropdownil.Items.FindByValue(gelenil.ToString()).Selected = true;
+                        dropdownil_SelectedIndexChanged(gelenil, e);
+                        Button1.Visible = false;
+                        Guncelle.Visible = true;
                     }
-                    this.dropdownil.DataBind();
+                    else
+                    {
+                        WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
+
+                        ListItemCollection options = new ListItemCollection();
+                        this.dropdownil.DataSource = options;
+                        options.Add(new ListItem("Seçiniz", "Seçiniz"));
+                        var ilYaz = nesne.IlGetir();
+                        for (int i = 0; i < ilYaz.Count; i++)
+                        {
+                            options.Add(new ListItem(ilYaz[i].ilad, ilYaz[i].ilid.ToString()));
+                            this.dropdownil.DataSource = options;
+
+                        }
+                        this.dropdownil.DataBind();
+                    }
+                    
 
                 }
                
@@ -63,12 +99,10 @@ namespace WebSitem
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            WebSitem.Business.musteri nesne1 = new WebSitem.Business.musteri();
             WebSitem.Business.Adres nesne2 = new WebSitem.Business.Adres();
             WebSitem.DataAccess.faturaadres ekle = new WebSitem.DataAccess.faturaadres();
 
-            var musterimail = Session["mail"].ToString();
-            var Musteriid = nesne1.MusteriIdSorgula(musterimail);
+            var Musteriid = Session["musteriid"].ToString();
             var ilid = nesne2.ilidgetir(dropdownil.SelectedItem.Value);
             var ilceid = nesne2.ilceidgetir(dropdownilce.SelectedItem.Value);
 
@@ -91,6 +125,34 @@ namespace WebSitem
             else
             {
                 FaturaEkleSonuc.Text = "İşlerde Terslik Oluştu Tekrar Deneyiniz!";
+            }
+        }
+
+        protected void Guncelle_Click(object sender, EventArgs e)
+        {
+            WebSitem.Business.Adres adres = new Business.Adres();
+            WebSitem.DataAccess.faturaadres guncel = new DataAccess.faturaadres();
+
+            var ilid = adres.ilidgetir(dropdownil.SelectedItem.Value);
+            var ilceid = adres.ilceidgetir(dropdownilce.SelectedItem.Value);
+
+            guncel.faturakad = first_name.Text;
+            guncel.faturasoyad = last_name.Text;
+            guncel.faturatel = phone_number.Text;
+            guncel.faturaadres1 = address.Text;
+            guncel.ilcefkid = int.Parse(ilceid);
+            guncel.musterifkid = int.Parse(Session["musteriid"].ToString());
+            guncel.ilfkid = int.Parse(ilid);
+
+            var değer = adres.FaturaAdresGuncelle(guncel);
+            if (değer == "1")
+            {
+                FaturaEkleSonuc.Text = "Başarıyla Güncellendi.";
+            }
+            else
+            {
+                FaturaEkleSonuc.Text = "Başarısız!!! Tekrar Deneyiniz!";
+                Response.Redirect("FaturaAdres.aspx");
             }
         }
     }

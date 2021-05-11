@@ -39,6 +39,7 @@
                             <tbody>
                             <asp:Repeater ID="repeaterurunalan" runat="server">
                                 <ItemTemplate>
+                                    <form method="get" >
                                     <tr>
                                     <td class="cart_product_img">
                                         <a href="#"><img src="<%# Eval("urunresimi") %>" alt=""></a>
@@ -53,8 +54,9 @@
                                     </td>
                                     <td class="price"><span><%# Eval("urunfiyat") %></span></td>
                                     <td class="total_price"><%# Eval("fiyat") %><span></span></td>
-                                    <td class="action"><a href="#"><i class="icon_close"></i></a></td>
+                                    <td class="action"><a href="Sepet.aspx"><i class="icon_close"></i></a></td>
                                 </tr>
+                                   </form>
                                 </ItemTemplate>
                             </asp:Repeater>
                                 

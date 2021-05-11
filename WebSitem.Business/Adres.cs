@@ -94,7 +94,12 @@ namespace WebSitem.Business
             return "1";
         }
 
-
+        public WebSitem.DataAccess.faturaadres GetByfaturaadres(int musteriid)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            var sonuc = ent.faturaadres.Where(p => p.musterifkid == musteriid).FirstOrDefault();
+            return sonuc;
+        }
         public string FaturaAdresEkle(WebSitem.DataAccess.faturaadres nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
@@ -109,6 +114,24 @@ namespace WebSitem.Business
             yeni.faturasoyad = nesne.faturasoyad;
             yeni.faturatel = nesne.faturatel;
             ekle.faturaadres.Add(yeni);
+            ekle.SaveChanges();
+            return "1";
+        }
+
+        public string FaturaAdresGuncelle(WebSitem.DataAccess.faturaadres nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.faturaadres guncel = new DataAccess.faturaadres();
+
+            var ara = ekle.faturaadres.Where(p => p.musterifkid == nesne.musterifkid).FirstOrDefault();
+            ara.faturakad = nesne.faturakad;
+            ara.faturasoyad = nesne.faturasoyad;
+            ara.faturatel = nesne.faturatel;
+            ara.faturaadres1 = nesne.faturaadres1;
+            ara.ilcefkid = nesne.ilcefkid;
+            ara.ilfkid = nesne.ilfkid;
+            ara.musterifkid = nesne.musterifkid;
+
             ekle.SaveChanges();
             return "1";
         }
