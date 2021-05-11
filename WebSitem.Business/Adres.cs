@@ -38,13 +38,33 @@ namespace WebSitem.Business
 
             return ilceid.ilceid.ToString();
         }
+        public string ilceadgetir(int a)
+        {
+            WebSitem.DataAccess.websayfaEntities ent4 = new DataAccess.websayfaEntities();
+            var ilcead = ent4.ilce.Where(p => p.ilceid == a).FirstOrDefault();
+
+            return ilcead.ilcead.ToString();
+        }
+        public string iladGetir(int a)
+        {
+            WebSitem.DataAccess.websayfaEntities ent4 = new DataAccess.websayfaEntities();
+            var ilad = ent4.il.Where(p => p.ilid == a).FirstOrDefault();
+
+            return ilad.ilad.ToString();
+        }
+
+        public WebSitem.DataAccess.gonderimadres GetBygonderimadres(int musteriid)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            var sonuc = ent.gonderimadres.Where(p => p.musterifkid == musteriid).FirstOrDefault();
+            return sonuc;
+        }
 
         public string GonderimAdresEkle(WebSitem.DataAccess.gonderimadres nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
             WebSitem.DataAccess.gonderimadres yeni = new DataAccess.gonderimadres();
 
-            var ara = ekle.gonderimadres.Where(p => p.musterifkid == nesne.musterifkid).FirstOrDefault();
             yeni.musterifkid = nesne.musterifkid;
             yeni.ilfkid = nesne.ilfkid;
             yeni.ilcefkid = nesne.ilcefkid;
@@ -56,6 +76,24 @@ namespace WebSitem.Business
             ekle.SaveChanges();
             return "1";
         }
+        public string GonderimAdresGuncelle(WebSitem.DataAccess.gonderimadres nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.gonderimadres guncel = new DataAccess.gonderimadres();
+
+            var ara = ekle.gonderimadres.Where(p => p.musterifkid == nesne.musterifkid).FirstOrDefault();
+            ara.alıcıadı = nesne.alıcıadı;
+            ara.alıcısoyadı = nesne.alıcısoyadı;
+            ara.alıcıtelefon = nesne.alıcıtelefon;
+            ara.gonderimadres1 = nesne.gonderimadres1;
+            ara.ilcefkid = nesne.ilcefkid;
+            ara.ilfkid = nesne.ilfkid;
+            ara.musterifkid = nesne.musterifkid;
+            
+            ekle.SaveChanges();
+            return "1";
+        }
+
 
         public string FaturaAdresEkle(WebSitem.DataAccess.faturaadres nesne)
         {

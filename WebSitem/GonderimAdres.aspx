@@ -64,21 +64,20 @@
                                 <div class="col-12">
                                     <div class="d-flex align-items-center">
                                         <!-- Single Checkbox -->
-                                        <div class="custom-control custom-checkbox d-flex align-items-center mr-30">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Adresiniz Sisteme Kayıt Edilsin Mi?</label>
+                                        <div class="d-flex align-items-center">
+                                        <asp:CheckBox ID="SistemKayit" CssClass="d-flex align-items-center" runat="server" Width="17px" Height="15px" /><asp:Label ID="KayitEdilme" CssClass="align-items-center" runat="server" Height="15px" Text="Sisteme Kayıt Edilsin Mi?"></asp:Label>
+                                          
                                         </div>
-                                    </div>
+                                    </div><br />
                                     <div class="d-flex align-items-center">
                                             <!-- Single Checkbox -->
-                                            <div class="custom-control custom-checkbox d-flex align-items-center">
-                                                 <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                <label class="custom-control-label" for="customCheck2">Fatura Adresi Aynı Mı?</label>
-                                            </div>
+                                            <asp:CheckBox ID="FaturaAdresEkleme" CssClass="d-flex align-items-center" Width="17px" Height="15px" runat="server" /><asp:Label ID="FaturaAdresKayit" CssClass="align-items-center" Height="15PX" runat="server" Text="Fatura Adresiniz Aynı Mı?"></asp:Label>
+                                         </div>
                                     </div>
-                                    <div class="checkout-btn mt-30">
+                                    <div class="col-12 mb-4">
                                         <asp:Label ID="EklemeSonuc" runat="server" ForeColor="Red" Text=""></asp:Label>
-                                        <asp:Button ID="Button1" CssClass="btn alazea-btn w-100 btn-danger" runat="server" OnClick="Button1_Click" Text="Kaydet" />
+                                        <asp:Button ID="Button1" CssClass="btn btn alazea-btn btn-danger" BackColor="#ff3300" runat="server" OnClick="Button1_Click" Text="Kaydet" />
+                                        <asp:Button ID="Guncelle" CssClass="btn alazea-btn btn-secondary" BackColor="#33cc33" runat="server" Visible="false" OnClick="Guncelle_Click" Text="Güncelle" />
                                     </div>
 
                                 </div>

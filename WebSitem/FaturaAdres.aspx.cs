@@ -17,19 +17,24 @@ namespace WebSitem
             }
             else
             {
-                WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
-
-                ListItemCollection options = new ListItemCollection();
-                this.dropdownil.DataSource = options;
-                options.Add(new ListItem("Seçiniz", "Seçiniz"));
-                var ilYaz = nesne.IlGetir();
-                for (int i = 0; i < ilYaz.Count; i++)
+                if (!Page.IsPostBack)
                 {
-                    options.Add(new ListItem(ilYaz[i].ilad, ilYaz[i].ilid.ToString()));
+                    WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
+
+                    ListItemCollection options = new ListItemCollection();
                     this.dropdownil.DataSource = options;
+                    options.Add(new ListItem("Seçiniz", "Seçiniz"));
+                    var ilYaz = nesne.IlGetir();
+                    for (int i = 0; i < ilYaz.Count; i++)
+                    {
+                        options.Add(new ListItem(ilYaz[i].ilad, ilYaz[i].ilid.ToString()));
+                        this.dropdownil.DataSource = options;
+
+                    }
+                    this.dropdownil.DataBind();
 
                 }
-                this.dropdownil.DataBind();
+               
             }
             
         }
@@ -79,9 +84,9 @@ namespace WebSitem
 
             if (değer == "1")
             {
-                FaturaEkleSonuc.Text = "Gonderim Adresiniz Başarılı Bir Şekilde Eklenildi";
+                FaturaEkleSonuc.Text = "Fatura Adresiniz Başarılı Bir Şekilde Eklenildi";
                 System.Threading.Thread.Sleep(50);
-                Response.Redirect("FaturaAdres.aspx");
+                Response.Redirect("Siparislerim.aspx");
             }
             else
             {
