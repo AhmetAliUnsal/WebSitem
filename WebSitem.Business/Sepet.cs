@@ -33,9 +33,34 @@ namespace WebSitem.Business
             }
             
         }
-        public string SepetUrunSil()
+        public string SepetUrunSil(int id)
         {
-            return "";
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.sepet sepet = new DataAccess.sepet();
+
+            var ara = ent.sepet.Where(p => p.sepetid == id).FirstOrDefault();
+            ent.sepet.Remove(ara);
+            ent.SaveChanges();
+
+            return "1";
+        }
+
+        public string SepetGuncelle(int a,WebSitem.DataAccess.sepet nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.sepet sepet = new DataAccess.sepet();
+
+            var ara = ent.sepet.Where(p => p.sepetid == a).FirstOrDefault();
+            ara.musterifkid = nesne.musterifkid;
+            ara.urunfkid = nesne.urunfkid;
+            ara.urunadet = nesne.urunadet;
+            ara.fiyat = nesne.fiyat;
+            ara.urunadi = nesne.urunadi;
+            ara.urunresimi = nesne.urunresimi;
+            ara.urunfiyat = nesne.urunfiyat;
+
+            ent.SaveChanges();
+            return "1";
         }
     }
 }

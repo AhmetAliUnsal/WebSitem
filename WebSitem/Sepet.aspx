@@ -37,30 +37,42 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            
                             <asp:Repeater ID="repeaterurunalan" runat="server">
                                 <ItemTemplate>
-                                    <form method="get" >
                                     <tr>
+                                    <form action="Sepet.aspx" method="get" >
                                     <td class="cart_product_img">
                                         <a href="#"><img src="<%# Eval("urunresimi") %>" alt=""></a>
                                         <h5><%# Eval("urunadi") %></h5>
                                     </td>
                                     <td class="qty">
                                         <div class="quantity">
-                                            <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                            <%--<span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>--%>
+                                            <input type="hidden" name="Urunid1" value="<%# Eval("urunfkid") %>" />
+                                            <input type="hidden" name="Sepetid" value="<%# Eval("sepetid") %>" />
+                                            <input type="hidden" name="Urunfiyat" value="<%# Eval("urunfiyat") %>"/>
+                                            <input type="hidden" name="urunad" value="<%# Eval("urunadi") %>"/>
+                                            <input type="hidden" name="urunresimadres" value="<%# Eval("urunresimi") %>" />
                                             <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="<%# Eval("urunadet") %>">
-                                            <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                            <%--<span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>--%>
                                         </div>
                                     </td>
                                     <td class="price"><span><%# Eval("urunfiyat") %></span></td>
                                     <td class="total_price"><%# Eval("fiyat") %><span></span></td>
-                                    <td class="action"><a href="Sepet.aspx"><i class="icon_close"></i></a></td>
+                                    <td class="action"><input type="submit" class="btn btn-success" value="Guncelle" style="width:100px"/></td>
+                                    
+                                </form> 
+                                <form action="Sepet.aspx" method="get">
+                                    <input type="hidden" name="Silineceksepetid" value="<%# Eval("sepetid") %>" />
+                                    <td><input type="submit" class="btn btn-danger" value="Sil" style="width:100px" /></td>
+                                </form>
                                 </tr>
-                                   </form>
+                                    
                                 </ItemTemplate>
                             </asp:Repeater>
                                 
-                                    
+                                
                             </tbody>
                         </table>
                     </div>
