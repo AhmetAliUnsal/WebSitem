@@ -25,5 +25,16 @@ namespace WebSitem.Business
             return "1";
             
         }
+        public string UrunSil(int id)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.urun urun = new DataAccess.urun();
+
+            var ara = ent.urun.Where(p => p.urunid == id).FirstOrDefault();
+            ent.urun.Remove(ara);
+            ent.SaveChanges();
+
+            return "1";
+        }
     }
 }

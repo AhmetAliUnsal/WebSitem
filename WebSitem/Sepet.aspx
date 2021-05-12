@@ -82,13 +82,9 @@
                 <!-- Cart Totals -->
                 <div class="col-12 col-lg-6 align-content-center">
                     <div class="cart-totals-area mt-70">
-                        <h5 class="title--">Sepet Tutar</h5>
-                        <div class="subtotal d-flex justify-content-between">
-                            <h5>Toplam Tutar</h5>
-                            <h5><%# Eval("fiyat") %></h5>
-                        </div>
+                        <asp:Label ID="ToplamTutar" runat="server" Font-Size="Large" Font-Bold="true" Text="Sepet Tutar:"></asp:Label>
                         <div class="checkout-btn">
-                            <a href="GonderimAdres.aspx" class="btn alazea-btn w-100">Ödeme Ekranına Geç</a>
+                            <br /><br /><a href="GonderimAdres.aspx" class="btn alazea-btn w-100">Ödeme Ekranına Geç</a>
                         </div>
                     </div>
                 </div>

@@ -236,6 +236,7 @@
     <Content Include="template\single-post.html" />
     <Content Include="template\style.css" />
     <Content Include="UrunEkle.aspx" />
+    <Content Include="Urunİslemleri.aspx" />
     <Content Include="veri tabanı deneme.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -366,6 +367,13 @@
     </Compile>
     <Compile Include="UrunEkle.aspx.designer.cs">
       <DependentUpon>UrunEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Urunİslemleri.aspx.cs">
+      <DependentUpon>Urunİslemleri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Urunİslemleri.aspx.designer.cs">
+      <DependentUpon>Urunİslemleri.aspx</DependentUpon>
     </Compile>
     <Compile Include="veri tabanı deneme.aspx.cs">
       <DependentUpon>veri tabanı deneme.aspx</DependentUpon>

@@ -47,7 +47,13 @@ namespace WebSitem
             {
                 int musteriid = int.Parse(Session["musteriid"].ToString());
                 string id = Request.QueryString["urunid"];
-                
+                int toplam = 0;
+                var sepettutarlar = ent.sepet.OrderBy(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
+                for(int i = 0; i < sepettutarlar.Count; i++)
+                {
+                    toplam = toplam + int.Parse(sepettutarlar[i].fiyat.ToString());
+                }
+                ToplamTutar.Text = "Sepet Tutar:"+toplam+"TL";
                 repeaterurunalan.DataSource = ent.sepet.OrderByDescending(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
                 repeaterurunalan.DataBind();
                 
@@ -69,7 +75,12 @@ namespace WebSitem
                 sepet.fiyat = toplamhesap;
                 sepet.urunfiyat = int.Parse(birimfiyat);
                 var değer = sepet1.SepetEkle(sepet);
-
+                
+                for(int i = 0; i < sepettutarlar.Count; i++)
+                {
+                    toplam = toplam + int.Parse(sepettutarlar[i].fiyat.ToString());
+                }
+                ToplamTutar.Text = "Sepet Tutar:"+toplam+"TL";
                 repeaterurunalan.DataSource = ent.sepet.OrderByDescending(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
                 repeaterurunalan.DataBind();
 
@@ -81,17 +92,6 @@ namespace WebSitem
             }
 
 
-
-        }
-        protected void Sil_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
-
-        protected void Guncelle_Click(object sender, EventArgs e)
-        {
-            string guncellenecekurunid = Request.QueryString["Urunid"];
 
         }
     }

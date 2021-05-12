@@ -11,7 +11,7 @@ namespace WebSitem
 {
 
 
-    public partial class Sepet
+    public partial class Urunİslemleri
     {
 
         /// <summary>
@@ -22,14 +22,5 @@ namespace WebSitem
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater repeaterurunalan;
-
-        /// <summary>
-        /// ToplamTutar denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ToplamTutar;
     }
 }
