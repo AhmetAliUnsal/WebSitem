@@ -15,14 +15,22 @@ namespace WebSitem
             WebSitem.DataAccess.urun urun = new DataAccess.urun();
             WebSitem.Business.Urun urun1 = new Business.Urun();
 
-            string silinecekurunid = Request.QueryString["Silinecekurunid"];
-            if (!String.IsNullOrEmpty(silinecekurunid))
+            if (Session["kullanici"] == null)
             {
-                urun1.UrunSil(int.Parse(silinecekurunid));
+                Response.Redirect("Login.aspx");
             }
+            else if (Session["kullanici"].ToString() == "admin")
+            {
+                string silinecekurunid = Request.QueryString["Silinecekurunid"];
+                if (!String.IsNullOrEmpty(silinecekurunid))
+                {
+                    urun1.UrunSil(int.Parse(silinecekurunid));
+                }
 
-            repeaterurunalan.DataSource = ent.urun.OrderByDescending(p => p.urunid).ToList();
-            repeaterurunalan.DataBind();
+                repeaterurunalan.DataSource = ent.urun.OrderByDescending(p => p.urunid).ToList();
+                repeaterurunalan.DataBind();
+            }
+                
 
         }
     }

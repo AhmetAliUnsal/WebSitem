@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UrunEkle.aspx.cs" Inherits="WebSitem.UrunEkle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Urun Guncelleme.aspx.cs" Inherits="WebSitem.Urun_Guncelleme" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadAlan" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SayfaBaslik" runat="server">
-    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(template/img/bg-img/24.jpg);">
-            <h2>Ürün Ekle</h2>
+     <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(template/img/bg-img/24.jpg);">
+            <h2>Ürün Guncelleme</h2>
         </div>
 
         <div class="container">
@@ -12,7 +12,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="Default.aspx"><i class="fa fa-home"></i> Anasayfa</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Ürün Ekle</li>
+                            <li class="breadcrumb-item active" aria-current="page">Urun Guncelleme</li>
                         </ol>
                     </nav>
                 </div>
@@ -20,7 +20,7 @@
         </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="OrtaAlan" runat="server">
-     <!-- ##### Checkout Area Start ##### -->
+         <!-- ##### Checkout Area Start ##### -->
     <div class="checkout_area mb-100">
         <div class="container">
             <div class="row justify-content-between">
@@ -31,7 +31,7 @@
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <Triggers>
-                                    <asp:PostBackTrigger ControlID="Button1" />
+                                    <asp:PostBackTrigger ControlID="Guncelle" />
                             </Triggers>
                             <ContentTemplate>
                                 <div class="row">
@@ -59,7 +59,10 @@
                                     <label for="dropdowndurum">Durumunu Seçiniz:</label>
                                     <asp:DropDownList id="dropdowndurum" AppendDataBoundItems="true" runat="server"></asp:DropDownList>
                                 </div>
-                              
+                                <div class="col-md-6 mb-4">
+                                    <label>Ürünün Resmi:</label><br />
+                                    <asp:Image ID="Image1" Height="300px" Width="500px" runat="server" />
+                                </div>
                                 <div class="col-md-12 mb-4">
                                     <label >Urun Resmini Yükleyiniz:</label>
                                     <asp:FileUpload ID="FileUpload1" runat="server"  />
@@ -67,7 +70,8 @@
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
                                         <asp:Label ID="EklemeSonuc" runat="server" ForeColor="Red" Text=""></asp:Label>
-                                        <asp:Button ID="Button1" CssClass="btn alazea-btn w-100 btn-danger" OnClick="Button1_Click" runat="server" Text="Kaydet" />
+                                        <asp:Button ID="Guncelle" CssClass="btn btn-success" OnClick="Guncelle_Click" Font-Bold="true" BackColor="#33cc33" Font-Size="Large" runat="server" Text="Güncelle" /><br />
+                                        <asp:Button ID="Geri" CssClass="btn btn-danger" OnClick="Geri_Click" Font-Bold="true" Font-Size="Large" BackColor="#993333" runat="server" Text="Geri Dön" />
                                         <asp:Label ID="Label1" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 
@@ -83,6 +87,4 @@
                 </div>
             </div>
         </div>
-
-    <!-- ##### Checkout Area End ##### -->
 </asp:Content>

@@ -23,6 +23,15 @@ namespace WebSitem.Business
             return kategoriid.kategoriid.ToString();
            
         }
+
+        public string KategoriaddBul(int a)
+        {
+            WebSitem.DataAccess.websayfaEntities ent2 = new DataAccess.websayfaEntities();
+            var kategoriid = ent2.kategori.Where(p => p.kategoriid == a).FirstOrDefault();
+
+            return kategoriid.kategoriad.ToString();
+
+        }
         public string KategoriEkle(WebSitem.DataAccess.kategori nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();

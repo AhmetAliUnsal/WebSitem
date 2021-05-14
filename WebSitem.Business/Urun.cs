@@ -27,13 +27,36 @@ namespace WebSitem.Business
         }
         public string UrunSil(int id)
         {
+            WebSitem.DataAccess.websayfaEntities sil = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.urun urun = new DataAccess.urun();
+
+            var ara = sil.urun.Where(p => p.urunid == id).FirstOrDefault();
+            sil.urun.Remove(ara);
+            sil.SaveChanges();
+
+            return "1";
+        }
+
+        public WebSitem.DataAccess.urun GetByurunid(int id)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            var sonuc = ent.urun.Where(p => p.urunid == id);
+            return sonuc.FirstOrDefault();
+        }
+
+        public string UrunGuncelle(int a, WebSitem.DataAccess.urun nesne)
+        {
             WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
             WebSitem.DataAccess.urun urun = new DataAccess.urun();
 
-            var ara = ent.urun.Where(p => p.urunid == id).FirstOrDefault();
-            ent.urun.Remove(ara);
+            var ara = ent.urun.Where(p => p.urunid == a).FirstOrDefault();
+            ara.urunadi = nesne.urunadi;
+            ara.urunbirimfiyat = nesne.urunbirimfiyat;
+            ara.urunkategorifkid = nesne.urunkategorifkid;
+            ara.durumfkid = nesne.durumfkid;
+            ara.urunstok = nesne.urunstok;
+            ara.urunresimadres = nesne.urunresimadres;
             ent.SaveChanges();
-
             return "1";
         }
     }

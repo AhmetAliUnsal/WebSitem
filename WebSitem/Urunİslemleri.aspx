@@ -26,6 +26,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="cart-table clearfix">
+                        <form runat="server">
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
@@ -37,12 +38,12 @@
                                     <th></th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
-                            <form runat="server">
                             <asp:Repeater ID="repeaterurunalan" runat="server">
                                 <ItemTemplate>
                                     <tr>
-                                    <form action="Urunİslemleri.aspx" method="get" >
+                                    <form action="Urun%20Guncelleme.aspx" method="get" >
                                     <td class="cart_product_img">
                                         <a href="#"><img src="<%# Eval("urunresimadres") %>" alt=""></a>
                                         <h5><%# Eval("urunadi") %></h5>
@@ -52,14 +53,16 @@
                                             <input type="hidden" name="Kategorifk" value="<%# Eval("urunkategorifkid") %>" />
                                             <input type="hidden" name="Durumfk" value="<%# Eval("durumfkid") %>"/>
                                             <input type="hidden" name="urunad" value="<%# Eval("urunadi") %>"/>
+                                            <input type="hidden" name="urunidsi" value="<%# Eval("urunid") %>"/>
                                             <input type="hidden" name="urunfiyat" value="<%# Eval("urunbirimfiyat") %>"/>
                                             <input type="hidden" name="resimadres" value="<%# Eval("urunresimadres") %>" />
-                                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="<%# Eval("urunstok") %>">
+                                            <label><%# Eval("urunstok") %> Adet</label>
                                         </div>
                                     </td>
-                                    <td class="price"><input type="number" id="urunfiyat" style="width:100px; background-color:lightgray; border-color:white; height:40px;" name="urunfiyat" value="<%# Eval("urunbirimfiyat") %>" /></td>
-                                    <td><asp:DropDownList id="dropdowndurum" AppendDataBoundItems="true" runat="server"></asp:DropDownList></td>
-                                    <td><asp:DropDownList id="dropdownkategori" AppendDataBoundItems="true" runat="server"></asp:DropDownList></td>
+                                    <td class="price"><label><%# Eval("urunbirimfiyat") %> TL</label></td>
+                                   
+                                    <td><label><%# Eval("durumfkid") %></label></td>
+                                    <td><label><%# Eval("urunkategorifkid") %></label></td>
                                     <td><input type="submit" class="btn btn-success" value="Guncelle" style="width:100px"/></td>
                                     
                                 </form> 
@@ -71,10 +74,12 @@
                                     
                                 </ItemTemplate>
                             </asp:Repeater>
-                                </form>
+                              
                                 
                             </tbody>
+                         
                         </table>
+                      </form>
                     </div>
                 </div>
             </div>

@@ -23,6 +23,14 @@ namespace WebSitem.Business
             return durumid.durumid.ToString();
 
         }
+        public string DurumadBul(int a)
+        {
+            WebSitem.DataAccess.websayfaEntities ent2 = new DataAccess.websayfaEntities();
+            var durumid = ent2.durum.Where(p => p.durumid == a).FirstOrDefault();
+
+            return durumid.durumad.ToString();
+
+        }
 
         public string DurumEkle(WebSitem.DataAccess.durum nesne)
         {

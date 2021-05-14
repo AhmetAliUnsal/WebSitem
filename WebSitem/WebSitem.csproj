@@ -235,6 +235,7 @@
     <Content Include="template\single-portfolio.html" />
     <Content Include="template\single-post.html" />
     <Content Include="template\style.css" />
+    <Content Include="Urun Guncelleme.aspx" />
     <Content Include="UrunEkle.aspx" />
     <Content Include="Urunİslemleri.aspx" />
     <Content Include="veri tabanı deneme.aspx" />
@@ -360,6 +361,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Urun Guncelleme.aspx.cs">
+      <DependentUpon>Urun Guncelleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Urun Guncelleme.aspx.designer.cs">
+      <DependentUpon>Urun Guncelleme.aspx</DependentUpon>
     </Compile>
     <Compile Include="UrunEkle.aspx.cs">
       <DependentUpon>UrunEkle.aspx</DependentUpon>
