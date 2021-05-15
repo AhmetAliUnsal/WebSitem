@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadAlan" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SayfaBaslik" runat="server">
+
     <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(template/img/bg-img/24.jpg);">
         <h2>Siparislerim</h2>
     </div>
@@ -21,6 +22,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="OrtaAlan" runat="server">
+ <form runat="server">
     <div class="cart-area section-padding-0-100 clearfix">
         <div class="container">
             <div class="row">
@@ -39,8 +41,8 @@
                             </thead>
                             <tbody>
 
-                                <asp:Repeater ID="repeaterurunalan" runat="server">
-                                    <itemtemplate>
+                           <asp:Repeater ID="repeaterurunalan" runat="server">
+                                <itemtemplate>
                                     <tr>
                                     <form action="Sepet.aspx" method="get" >
                                     <td class="cart_product_img">
@@ -48,15 +50,15 @@
                                         <h5><%# Eval("urunadi") %></h5>
                                     </td>
                                     <td><span><%# Eval("urunadet") %></span></td>
-                                    <td class="price"><span><%# Eval("urunbirimfiyat") %></span></td>
+                                    <td class="price"><span><%# Eval("urunbirimfiyati") %></span></td>
                                     <td class="total_price"><span><%# Eval("toplamfiyat") %></span></td>
                                     <td><span><%# Eval("siparistarihi") %></span></td>
                                     
                                 </form> 
                                 </tr>
                                     
-                                </itemtemplate>
-                                </asp:Repeater>
+                              </itemtemplate>
+                           </asp:Repeater>
 
 
                             </tbody>
@@ -68,4 +70,5 @@
         </div>
     </div>
     <!-- ##### Cart Area End ##### -->
+ </form>
 </asp:Content>

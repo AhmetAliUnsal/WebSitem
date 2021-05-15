@@ -174,6 +174,7 @@ namespace WebSitem
             for (int i = 0; i < urunler.Count; i++)
             {
                 siparis.toplamfiyat = urunler[i].fiyat;
+                siparis.musterifkid = musteriid;
                 siparis.urunfkid = urunler[i].urunfkid;
                 siparis.urunadi = urunler[i].urunadi;
                 siparis.urunbirimfiyati = urunler[i].urunfiyat;
