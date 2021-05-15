@@ -50,6 +50,7 @@ namespace WebSitem
                         dropdownil_SelectedIndexChanged(gelenil, e);
                         Button1.Visible = false;
                         Guncelle.Visible = true;
+                        siparis.Visible = true;
                     }
                     else
                     {
@@ -154,6 +155,12 @@ namespace WebSitem
                 FaturaEkleSonuc.Text = "Başarısız!!! Tekrar Deneyiniz!";
                 Response.Redirect("FaturaAdres.aspx");
             }
+        }
+
+
+        protected void siparis_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Siparislerim.aspx");
         }
     }
 }

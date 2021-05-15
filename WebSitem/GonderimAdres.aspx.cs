@@ -53,6 +53,7 @@ namespace WebSitem
                         dropdownil_SelectedIndexChanged(gelenil,e);
                         Button1.Visible = false;
                         Guncelle.Visible = true;
+                        FaturaAdres.Visible = true;
                         FaturaAdresEkleme.Visible = false;
                         FaturaAdresKayit.Visible = false;
 
@@ -219,6 +220,11 @@ namespace WebSitem
                 EklemeSonuc.Text = "Başarısız!!! Tekrar Deneyiniz!";
                 Response.Redirect("GonderimAdres.aspx");
             }
+        }
+
+        protected void FaturaAdres_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FaturaAdres.aspx");
         }
     }
 }

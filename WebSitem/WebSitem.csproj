@@ -87,6 +87,7 @@
     <Content Include="Sepet.aspx" />
     <Content Include="SifreSifirla.aspx" />
     <Content Include="HesapDogrula.aspx" />
+    <Content Include="Siparislerim.aspx" />
     <Content Include="template\about.html" />
     <Content Include="template\blog.html" />
     <Content Include="template\cart.html" />
@@ -354,6 +355,13 @@
     </Compile>
     <Compile Include="HesapDogrula.aspx.designer.cs">
       <DependentUpon>HesapDogrula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Siparislerim.aspx.cs">
+      <DependentUpon>Siparislerim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Siparislerim.aspx.designer.cs">
+      <DependentUpon>Siparislerim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

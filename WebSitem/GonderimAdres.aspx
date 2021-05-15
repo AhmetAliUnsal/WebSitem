@@ -70,7 +70,8 @@
                                     <div class="col-12 mb-4">
                                         <asp:Label ID="EklemeSonuc" runat="server" ForeColor="Red" Text=""></asp:Label>
                                         <asp:Button ID="Button1" CssClass="btn btn alazea-btn btn-danger" BackColor="#ff3300" runat="server" OnClick="Button1_Click" Text="Kaydet" />
-                                        <asp:Button ID="Guncelle" CssClass="btn alazea-btn btn-secondary" BackColor="#33cc33" runat="server" Visible="false" OnClick="Guncelle_Click" Text="Güncelle" />
+                                        <asp:Button ID="Guncelle" CssClass="btn alazea-btn btn-secondary" BackColor="#33cc33" Font-Bold="true" Font-Size="Large" runat="server" Visible="false" OnClick="Guncelle_Click" Text="Güncelle" /><br /><br />
+                                       <asp:Button ID="FaturaAdres" CssClass="btn alazea-btn btn-danger" BackColor="#990000" Font-Bold="true" Font-Size="Large" runat="server" Visible="false" OnClick="FaturaAdres_Click" Text="Devam Et" />
                                     </div>
 
                                 </div>

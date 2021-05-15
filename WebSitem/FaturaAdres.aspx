@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SayfaBaslik" runat="server">
     <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(template/img/bg-img/24.jpg);">
-            <h2>GonderimAdres</h2>
+            <h2>Fatura Adres</h2>
         </div>
 
         <div class="container">
@@ -63,9 +63,10 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Label ID="FaturaEkleSonuc" runat="server" Text=""></asp:Label>
+                                        <asp:Label ID="FaturaEkleSonuc" runat="server" ForeColor="#cc00ff" BackColor="#00ffff" Font-Size="Large" Font-Bold="true" Text=""></asp:Label><br />
                                         <asp:Button ID="Button1" CssClass="btn btn alazea-btn btn-danger" BackColor="#ff3300" OnClick="Button1_Click" runat="server" Text="Kaydet" />
-                                        <asp:Button ID="Guncelle" CssClass="btn alazea-btn btn-secondary" BackColor="#33cc33" runat="server" Visible="false" OnClick="Guncelle_Click" Text="Güncelle" />
+                                        <asp:Button ID="Guncelle" CssClass="btn alazea-btn btn-secondary" BackColor="#33cc33" runat="server" Font-Bold="true" Font-Size="Large" Visible="false" OnClick="Guncelle_Click" Text="Güncelle" /><br /><br />
+                                        <asp:Button ID="siparis" CssClass="btn alazea-btn btn-danger" BackColor="#990000" Font-Bold="true" Font-Size="Large" runat="server" Visible="false" OnClick="siparis_Click" Text="Devam Et" />
                                     </div>
                                 </div>
                             </div>
