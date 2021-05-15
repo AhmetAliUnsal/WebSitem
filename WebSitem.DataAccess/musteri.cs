@@ -19,8 +19,9 @@ namespace WebSitem.DataAccess
         {
             this.faturaadres = new HashSet<faturaadres>();
             this.gonderimadres = new HashSet<gonderimadres>();
-            this.sepet = new HashSet<sepet>();
             this.sepeton = new HashSet<sepeton>();
+            this.sepet = new HashSet<sepet>();
+            this.siparis = new HashSet<siparis>();
         }
     
         public int musteriid { get; set; }
@@ -36,8 +37,10 @@ namespace WebSitem.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<gonderimadres> gonderimadres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<sepeton> sepeton { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sepet> sepet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sepeton> sepeton { get; set; }
+        public virtual ICollection<siparis> siparis { get; set; }
     }
 }

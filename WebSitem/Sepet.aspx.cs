@@ -94,5 +94,11 @@ namespace WebSitem
 
 
         }
+
+        protected void SiparisEkranınaGec_Click(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("GonderimAdres.aspx");
+        }
     }
 }

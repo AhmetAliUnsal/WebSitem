@@ -160,6 +160,37 @@ namespace WebSitem
 
         protected void siparis_Click(object sender, EventArgs e)
         {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.siparis siparis = new DataAccess.siparis();
+            WebSitem.Business.Siparis siparis1 = new Business.Siparis();
+            WebSitem.Business.Adres adres = new Business.Adres();
+            WebSitem.Business.Sepet sepet = new Business.Sepet();
+
+            int musteriid = int.Parse(Session["musteriid"].ToString());
+            int gonderimadresid = adres.gonderimadresidGetir(musteriid);
+            int faturaadresid = adres.faturaadresidGetir(musteriid);
+            var urunler = ent.sepet.OrderBy(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
+
+            for (int i = 0; i < urunler.Count; i++)
+            {
+                siparis.toplamfiyat = urunler[i].fiyat;
+                siparis.urunfkid = urunler[i].urunfkid;
+                siparis.urunadi = urunler[i].urunadi;
+                siparis.urunbirimfiyati = urunler[i].urunfiyat;
+                siparis.urunadet = urunler[i].urunadet;
+                siparis.urunresmi = urunler[i].urunresimi;
+                siparis.toplamfiyat = urunler[i].fiyat;
+                siparis.faturaadresfkid = faturaadresid;
+                siparis.gonderimadresfkid = gonderimadresid;
+                siparis.odemetipifkid = 1;
+                var deger = siparis1.SiparisEkle(siparis);
+
+            }
+            for(int k = 0; k < urunler.Count; k++)
+            {
+                sepet.SepetUrunSil(urunler[k].sepetid);
+            }
+
             Response.Redirect("Siparislerim.aspx");
         }
     }

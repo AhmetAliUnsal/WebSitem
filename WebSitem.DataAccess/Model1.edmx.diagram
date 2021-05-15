@@ -23,17 +23,18 @@
         <EntityTypeShape EntityType="websayfaModel.musteri" Width="1.5" PointX="3" PointY="8.375" />
         <AssociationConnector Association="websayfaModel.FK_faturaadres_musteri" />
         <AssociationConnector Association="websayfaModel.FK_gonderimadres_musteri" />
-        <EntityTypeShape EntityType="websayfaModel.sepet" Width="1.5" PointX="10.5" PointY="8" />
-        <EntityTypeShape EntityType="websayfaModel.siparis" Width="1.5" PointX="12.75" PointY="6.75" />
-        <AssociationConnector Association="websayfaModel.FK_siparis_faturaadres" />
-        <AssociationConnector Association="websayfaModel.FK_siparis_gonderimadres" />
-        <AssociationConnector Association="websayfaModel.FK_sepet_musteri" />
-        <AssociationConnector Association="websayfaModel.FK_siparis_odemetipi" />
-        <AssociationConnector Association="websayfaModel.FK_sepet_urun" />
-        <AssociationConnector Association="websayfaModel.FK_siparis_sepet" />
         <EntityTypeShape EntityType="websayfaModel.sepeton" Width="1.5" PointX="13.5" PointY="3.5" />
         <AssociationConnector Association="websayfaModel.FK_sepeton_musteri" />
         <AssociationConnector Association="websayfaModel.FK_sepeton_urun" />
+        <EntityTypeShape EntityType="websayfaModel.sepet" Width="1.5" PointX="10.5" PointY="8.125" />
+        <EntityTypeShape EntityType="websayfaModel.siparis" Width="1.5" PointX="12.75" PointY="6.375" />
+        <AssociationConnector Association="websayfaModel.FK_siparis_faturaadres" />
+        <AssociationConnector Association="websayfaModel.FK_siparis_gonderimadres" />
+        <AssociationConnector Association="websayfaModel.FK_sepet_musteri" />
+        <AssociationConnector Association="websayfaModel.FK_siparis_musteri" />
+        <AssociationConnector Association="websayfaModel.FK_siparis_odemetipi" />
+        <AssociationConnector Association="websayfaModel.FK_sepet_urun" />
+        <AssociationConnector Association="websayfaModel.FK_siparis_urun" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

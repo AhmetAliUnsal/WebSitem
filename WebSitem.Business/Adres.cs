@@ -100,6 +100,18 @@ namespace WebSitem.Business
             var sonuc = ent.faturaadres.Where(p => p.musterifkid == musteriid).FirstOrDefault();
             return sonuc;
         }
+        public int faturaadresidGetir(int musteriid)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            var sonuc = ent.faturaadres.Where(p => p.musterifkid == musteriid).FirstOrDefault();
+            return sonuc.faturaadresid;
+        }
+        public int gonderimadresidGetir(int musteriid)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            var sonuc = ent.gonderimadres.Where(p => p.musterifkid == musteriid).FirstOrDefault();
+            return sonuc.gonderimadresid;
+        }
         public string FaturaAdresEkle(WebSitem.DataAccess.faturaadres nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();

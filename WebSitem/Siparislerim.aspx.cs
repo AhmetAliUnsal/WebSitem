@@ -11,7 +11,19 @@ namespace WebSitem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["musteriid"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
 
+                int musteriid = int.Parse(Session["musteriid"].ToString());
+                repeaterurunalan.DataSource = ent.siparis.OrderByDescending(p => p.siparisid).Where(p => p.musterifkid == musteriid).ToList();
+                repeaterurunalan.DataBind();
+            }
+                
         }
     }
 }

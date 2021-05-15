@@ -21,6 +21,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="OrtaAlan" runat="server">
      <!-- ##### Cart Area Start ##### -->
+    <form runat="server">
     <div class="cart-area section-padding-0-100 clearfix">
         <div class="container">
             <div class="row">
@@ -84,7 +85,8 @@
                     <div class="cart-totals-area mt-70">
                         <asp:Label ID="ToplamTutar" runat="server" Font-Size="Large" Font-Bold="true" Text="Sepet Tutar:"></asp:Label>
                         <div class="checkout-btn">
-                            <br /><br /><a href="GonderimAdres.aspx" class="btn alazea-btn w-100">Ödeme Ekranına Geç</a>
+                            <br /><br /><asp:Button ID="SiparisEkranınaGec" CssClass="btn alazea-btn" Width="1100px" Font-Size="Large" Font-Bold="true" runat="server" OnClick="SiparisEkranınaGec_Click" Text="Ödemeye Geç" />
+                            
                         </div>
                     </div>
                 </div>
@@ -93,5 +95,5 @@
         </div>
     </div>
     <!-- ##### Cart Area End ##### -->
-
+    </form>
 </asp:Content>
