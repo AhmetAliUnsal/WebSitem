@@ -106,7 +106,11 @@ namespace WebSitem
                         this.dropdownilce.DataSource = options2;
                     }
                     this.dropdownilce.DataBind();
-                    dropdownilce.Items.FindByValue(gelenilce.ToString()).Selected = true;
+                    if (!Page.IsPostBack)
+                    {
+                        dropdownilce.Items.FindByValue(gelenilce.Trim()).Selected = true;
+                    }
+                    
                 }
             }
             else
@@ -127,13 +131,12 @@ namespace WebSitem
                         this.dropdownilce.DataSource = options2;
                     }
                     this.dropdownilce.DataBind();
+
                 }
             }
-            
-            
-           
-
+                
         }
+   
 
         protected void Button1_Click(object sender, EventArgs e)
         {

@@ -53,6 +53,7 @@
                                     <td><span><%# Eval("urunadet") %></span></td>
                                     <td class="price"><span><%# Eval("urunbirimfiyati") %></span></td>
                                     <td class="total_price"><span><%# Eval("toplamfiyat") %></span></td>
+                                    <%--<th><span><%# Eval("gonderimadres") %></span><br /><span><%# Eval("ilcead") %>/<%# Eval("ilad") %></span></th>--%>
                                     <td><span><%# Eval("siparistarihi") %></span></td>
                                     
                                 </form> 

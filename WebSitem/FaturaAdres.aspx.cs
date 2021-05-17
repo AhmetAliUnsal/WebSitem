@@ -78,24 +78,56 @@ namespace WebSitem
 
         protected void dropdownil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
-            if (dropdownil.SelectedItem.Value == "Seçiniz")
+            WebSitem.Business.Adres gonder = new Business.Adres();
+            int id = int.Parse(Session["musteriid"].ToString());
+            var veri = gonder.GetByfaturaadres(id);
+            if (veri != null)
             {
-                dropdownilce.Items.Clear();
+                WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
+                var gelenilce = gonder.ilceadgetir(int.Parse(veri.ilcefkid.ToString()));
+                if (dropdownil.SelectedItem.Value == "Seçiniz")
+                {
+                    dropdownilce.Items.Clear();
+                }
+                else
+                {
+                    ListItemCollection options2 = new ListItemCollection();
+                    var getirilecekil = dropdownil.SelectedItem.Value.Trim();
+                    var ilceYaz = nesne.IlceGetir(getirilecekil);
+                    for (int i = 0; i < ilceYaz.Count; i++)
+                    {
+                        options2.Add(new ListItem(ilceYaz[i].ilcead, ilceYaz[i].ilceid.ToString()));
+                        this.dropdownilce.DataSource = options2;
+                    }
+                    this.dropdownilce.DataBind();
+                    if (!Page.IsPostBack)
+                    {
+                        dropdownilce.Items.FindByValue(gelenilce.Trim()).Selected = true;
+                    }
+
+                }
             }
             else
             {
-                ListItemCollection options2 = new ListItemCollection();
-                var getirilecekil = dropdownil.SelectedItem.Value.Trim();
-                var ilceYaz = nesne.IlceGetir(getirilecekil);
-                for (int i = 0; i < ilceYaz.Count; i++)
+                WebSitem.Business.Adres nesne = new WebSitem.Business.Adres();
+                if (dropdownil.SelectedItem.Value == "Seçiniz")
                 {
-                    options2.Add(new ListItem(ilceYaz[i].ilcead, ilceYaz[i].ilceid.ToString()));
-                    this.dropdownilce.DataSource = options2;
+                    dropdownilce.Items.Clear();
                 }
-                this.dropdownilce.DataBind();
-            }
+                else
+                {
+                    ListItemCollection options2 = new ListItemCollection();
+                    var getirilecekil = dropdownil.SelectedItem.Value.Trim();
+                    var ilceYaz = nesne.IlceGetir(getirilecekil);
+                    for (int i = 0; i < ilceYaz.Count; i++)
+                    {
+                        options2.Add(new ListItem(ilceYaz[i].ilcead, ilceYaz[i].ilceid.ToString()));
+                        this.dropdownilce.DataSource = options2;
+                    }
+                    this.dropdownilce.DataBind();
 
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
