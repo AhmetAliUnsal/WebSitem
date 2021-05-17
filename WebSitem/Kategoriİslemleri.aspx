@@ -34,31 +34,31 @@
                             <ContentTemplate>
                                 <div class="row">
                                <div id="kategoriadi" class="col-md-12 mb-4">
-                                    <label for="kategoriad">Durum Ad:</label>
+                                    <label for="kategoriad">Kategori Ad:</label>
                                     <asp:TextBox ID="kategoriad" CssClass="form-control" runat="server"></asp:TextBox>
                                </div>
                                 
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="KategoriEkle" CssClass="btn alazea-btn btn-primary" BackColor="#3399ff" runat="server" OnClick="KategoriEkle_Click"  Text="Durum Ekle" />
+                                        <asp:Button ID="KategoriEkle" CssClass="btn alazea-btn btn-primary" BackColor="#3399ff" runat="server" OnClick="KategoriEkle_Click"  Text="Kategori Ekle" /><br />
                                         <asp:Label ID="EklemeSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 
                                 </div>
                                 <div class="col-md-12 mb-4">
-                                    <label for="dropdownkategori">Silmek İstediğiniz Durumunu Seçiniz:</label>
+                                    <label for="dropdownkategori">Silmek İstediğiniz Durumu Seçiniz:</label>
                                     <asp:DropDownList id="dropdownkategori" AppendDataBoundItems="true" runat="server"></asp:DropDownList>
                                 </div>
                                  <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="KategoriSil" CssClass="btn alazea-btn btn-danger" BackColor="#ff0000" runat="server" OnClick="KategoriSil_Click"  Text="Durum Sil" />
+                                        <asp:Button ID="KategoriSil" CssClass="btn alazea-btn btn-danger" BackColor="#ff0000" runat="server" OnClick="KategoriSil_Click"  Text="Kategori Sil" />
                                         <asp:Label ID="SilSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 
                                 </div>
                                 <div class="col-12">
                                     <div class="checkout-btn mt-30">
-                                        <asp:Button ID="KategoriListele" CssClass="btn alazea-btn btn-secondary" BackColor="#996600" runat="server" OnClick="KategoriListele_Click"  Text="Durumları Listele" />
+                                        <asp:Button ID="KategoriListele" CssClass="btn alazea-btn btn-secondary" BackColor="#996600" runat="server" OnClick="KategoriListele_Click"  Text="Kategorileri Listele" />
                                         <asp:Label ID="ListeSonuc" runat="server" ForeColor="#cc0099" Text=""></asp:Label>
                                     </div>
 

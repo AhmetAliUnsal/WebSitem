@@ -15,6 +15,7 @@ namespace WebSitem
             WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
             WebSitem.DataAccess.sepet sepet = new DataAccess.sepet();
             WebSitem.Business.Sepet sepet1 = new Business.Sepet();
+
             string silineceksepetid = Request.QueryString["Silineceksepetid"];
             if (!String.IsNullOrEmpty(silineceksepetid))
             {
@@ -75,12 +76,14 @@ namespace WebSitem
                 sepet.fiyat = toplamhesap;
                 sepet.urunfiyat = int.Parse(birimfiyat);
                 var değer = sepet1.SepetEkle(sepet);
-                
-                for(int i = 0; i < sepettutarlar.Count; i++)
+
+                int toplam2 = 0;
+                var sepettutar= ent.sepet.OrderBy(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
+                    for (int i = 0; i < sepettutar.Count; i++)
                 {
-                    toplam = toplam + int.Parse(sepettutarlar[i].fiyat.ToString());
+                    toplam2 = toplam2 + int.Parse(sepettutar[i].fiyat.ToString());
                 }
-                ToplamTutar.Text = "Sepet Tutar:"+toplam+"TL";
+                ToplamTutar.Text = "Sepet Tutar:"+toplam2+"TL";
                 repeaterurunalan.DataSource = ent.sepet.OrderByDescending(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
                 repeaterurunalan.DataBind();
 

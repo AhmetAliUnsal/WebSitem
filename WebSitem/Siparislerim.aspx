@@ -35,6 +35,7 @@
                                     <th>Adet</th>
                                     <th>Adet Fiyat</th>
                                     <th>Toplam Fiyat</th>
+                                    <%--<th>Teslimat Adresi</th>--%>
                                     <th>Alış Tarihi</th>
                                     <th></th>
                                 </tr>

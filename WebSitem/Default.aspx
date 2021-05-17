@@ -291,112 +291,41 @@
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center">
-                        <h2>NEW ARRIVALS</h2>
-                        <p>We have the latest products, it must be exciting for you</p>
+                        <h2>Yeni Ürünler</h2>
+                        <p>Son Eklenen Ürünlerimiz</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-
-                <!-- Single Product Area -->
+            <asp:Repeater ID="RepeaterUrun" runat="server">
+                <ItemTemplate>
+                     <!-- Single Product Area -->
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="single-product-area mb-50 wow ">
                         <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="template/img/bg-img/9.jpg" alt=""></a>
+                        <div>
+                            <a href="<%# Eval("urunresimadres") %>"><img style="width:300px;height:300px" src="<%# Eval("urunresimadres") %>" alt=""></a>
                             <!-- Product Tag -->
-                            <div class="product-tag">
-                                <a href="#">Hot</a>
-                            </div>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
+                         <%--   <div class="product-meta d-flex">
                                 <a href="cart.html" class="add-to-cart-btn">Spete Ekle</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
+                            </div>--%>
                         </div>
                         <!-- Product Info -->
                         <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Kaktüs</p>
-                            </a>
-                            <h6>60 TL</h6>
+                                <b><p style="font-size:large;"><%# Eval("urunadi") %></p></b>
+                            <b><h6 style="font-size:large; color:red;"><%# Eval("urunbirimfiyat")%> TL</h6></b>
                         </div>
                     </div>
                 </div>
+                </ItemTemplate>
+            </asp:Repeater>
+               
 
-                <!-- Single Product Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="200ms">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="template/img/bg-img/10.jpg" alt=""></a>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                <a href="cart.html" class="add-to-cart-btn">Sepete Ekle</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Kaktüs</p>
-                            </a>
-                            <h6>40 TL</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="template/img/bg-img/11.jpg" alt=""></a>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                <a href="cart.html" class="add-to-cart-btn">Sepete Ekle</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Kaktüs</p>
-                            </a>
-                            <h6>50 TL</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-product-area mb-50 wow fadeInUp" data-wow-delay="400ms">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <a href="shop-details.html"><img src="template/img/bg-img/12.jpg" alt=""></a>
-                            <!-- Product Tag -->
-                            <div class="product-tag sale-tag">
-                                <a href="#">Hot</a>
-                            </div>
-                            <div class="product-meta d-flex">
-                                <a href="#" class="wishlist-btn"><i class="icon_heart_alt"></i></a>
-                                <a href="cart.html" class="add-to-cart-btn">Sepete Ekle</a>
-                                <a href="#" class="compare-btn"><i class="arrow_left-right_alt"></i></a>
-                            </div>
-                        </div>
-                        <!-- Product Info -->
-                        <div class="product-info mt-15 text-center">
-                            <a href="shop-details.html">
-                                <p>Kaktüs</p>
-                            </a>
-                            <h6>30 TL</h6>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div class="col-12 text-center">
-                    <a href="#" class="btn alazea-btn">Hepsini Görüntüle</a>
+                    <a href="Magaza.aspx" class="btn alazea-btn">Hepsini Görüntüle</a>
                 </div>
 
             </div>

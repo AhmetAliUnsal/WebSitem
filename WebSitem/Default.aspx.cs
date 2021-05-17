@@ -13,7 +13,9 @@ namespace WebSitem
         protected void Page_Load(object sender, EventArgs e)
         
         {
-
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            RepeaterUrun.DataSource = ent.urun.OrderByDescending(p => p.urunid).Take(4).ToList();
+            RepeaterUrun.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
