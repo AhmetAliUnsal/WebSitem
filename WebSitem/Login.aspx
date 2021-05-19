@@ -204,7 +204,7 @@ a:hover {
 
                         <div class="form-group"> 
                             <label class="form-control-label text-muted">Şifreniz:</label> 
-                            <asp:TextBox ID="psw" name="psw" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="psw" name="psw" TextMode="Password" CssClass="form-control" runat="server"></asp:TextBox>
                         </div>
 
                         <div class="row justify-content-center my-3 px-3"> 

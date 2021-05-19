@@ -20,6 +20,7 @@ namespace WebSitem
             if (!String.IsNullOrEmpty(silineceksepetid))
             {
                 sepet1.SepetUrunSil(int.Parse(silineceksepetid));
+                silineceksepetid = null;
 
             }
 
@@ -39,6 +40,7 @@ namespace WebSitem
                 sepet.fiyat = toplam;
 
                 var değer=sepet1.SepetGuncelle(sepetid,sepet);
+                guncelleneceksepetid = null;
             }
             if (Session["musteriid"] == null)
             {
@@ -56,6 +58,7 @@ namespace WebSitem
                 }
                 ToplamTutar.Text = "Sepet Tutar:"+toplam+"TL";
                 repeaterurunalan.DataSource = ent.sepet.OrderByDescending(p => p.sepetid).Where(p => p.musterifkid == musteriid).ToList();
+                repeaterurunalan.EnableViewState = true;
                 repeaterurunalan.DataBind();
                 
                 if (!String.IsNullOrEmpty(id))

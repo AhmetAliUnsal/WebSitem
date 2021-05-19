@@ -61,7 +61,11 @@
                                     </td>
                                     <td class="price"><span><%# Eval("urunfiyat") %></span></td>
                                     <td class="total_price"><%# Eval("fiyat") %><span></span></td>
-                                    <td class="action"><input type="submit" class="btn btn-success" value="Guncelle" style="width:100px"/></td>
+                                    <td>
+                                        <input type="hidden" name="guncelleneceksepetid" value="<%# Eval("sepetid") %>"/>
+                                        <input type="submit" class="btn btn-success" value="Guncelle" style="width:100px"/>
+
+                                    </td>
                                     
                                 </form> 
                                 <form action="Sepet.aspx" method="get">
