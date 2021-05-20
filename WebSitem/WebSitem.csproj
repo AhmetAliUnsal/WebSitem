@@ -80,6 +80,8 @@
     <Content Include="Kategoriİslemleri.aspx" />
     <Content Include="Kayit.aspx" />
     <Content Include="KişiselBilgiler.aspx" />
+    <Content Include="KullanıcıGuncelle.aspx" />
+    <Content Include="KullanıcılarıYonet.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Magaza.aspx" />
@@ -305,6 +307,20 @@
     </Compile>
     <Compile Include="KişiselBilgiler.aspx.designer.cs">
       <DependentUpon>KişiselBilgiler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcıGuncelle.aspx.cs">
+      <DependentUpon>KullanıcıGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KullanıcıGuncelle.aspx.designer.cs">
+      <DependentUpon>KullanıcıGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcılarıYonet.aspx.cs">
+      <DependentUpon>KullanıcılarıYonet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KullanıcılarıYonet.aspx.designer.cs">
+      <DependentUpon>KullanıcılarıYonet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

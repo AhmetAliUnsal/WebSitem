@@ -216,6 +216,21 @@ namespace WebSitem.Business
             ekle.SaveChanges();
             return "1";
         }
+        public string KullanıcıGuncelle(int a, WebSitem.DataAccess.musteri nesne)
+        {
+            WebSitem.DataAccess.websayfaEntities ent = new DataAccess.websayfaEntities();
+            WebSitem.DataAccess.musteri musteri = new DataAccess.musteri();
+
+            var ara = ent.musteri.Where(p => p.musteriid == a).FirstOrDefault();
+            ara.musteriadi = nesne.musteriadi;
+            ara.musteriemail = nesne.musteriemail;
+            ara.musterisifre = nesne.musterisifre;
+            ara.musteriTc = nesne.musteriTc;
+            ara.musteritel = nesne.musteritel;
+            ara.musteritur = nesne.musteritur;
+            ent.SaveChanges();
+            return "1";
+        }
         public string VeriGüncelle(string musteriTc,WebSitem.DataAccess.musteri nesne)
         {
             WebSitem.DataAccess.websayfaEntities ekle = new DataAccess.websayfaEntities();
