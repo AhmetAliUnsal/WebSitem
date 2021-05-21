@@ -28,18 +28,21 @@
                 <div class="col-12">
                     <div class="cart-table clearfix">
                         <table class="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <th>Ürün</th>
-                                    <th>Adet</th>
-                                    <th>Fiyat</th>
-                                    <th>Toplam</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                            
                             
                             <asp:Repeater ID="repeaterurunalan" runat="server">
+                                <HeaderTemplate>
+                                    <thead>
+                                        <tr>
+                                             <th>Ürün</th>
+                                             <th>Adet</th>
+                                             <th>Fiyat</th>
+                                             <th>Toplam</th>
+                                            
+                                        </tr>
+                                     </thead>
+                                    <tbody>
+                                </HeaderTemplate>
                                 <ItemTemplate>
                                     <tr>
                                     <form action="Sepet.aspx" method="get" >
